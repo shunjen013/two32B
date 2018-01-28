@@ -194,36 +194,222 @@ public class XQueryParser extends Parser {
 	}
 
 	public static class RpContext extends ParserRuleContext {
-		public TagNameContext tagName() {
-			return getRuleContext(TagNameContext.class,0);
+		public RpContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
 		}
-		public AttNameContext attName() {
-			return getRuleContext(AttNameContext.class,0);
+		@Override public int getRuleIndex() { return RULE_rp; }
+	 
+		public RpContext() { }
+		public void copyFrom(RpContext ctx) {
+			super.copyFrom(ctx);
 		}
+	}
+	public static class ParenContext extends RpContext {
+		public RpContext rp() {
+			return getRuleContext(RpContext.class,0);
+		}
+		public ParenContext(RpContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterParen(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitParen(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitParen(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class StarContext extends RpContext {
+		public StarContext(RpContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterStar(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitStar(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitStar(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class FilterRPContext extends RpContext {
+		public RpContext rp() {
+			return getRuleContext(RpContext.class,0);
+		}
+		public FilterContext filter() {
+			return getRuleContext(FilterContext.class,0);
+		}
+		public FilterRPContext(RpContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterFilterRP(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitFilterRP(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitFilterRP(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class CommaRPContext extends RpContext {
 		public List<RpContext> rp() {
 			return getRuleContexts(RpContext.class);
 		}
 		public RpContext rp(int i) {
 			return getRuleContext(RpContext.class,i);
 		}
-		public FilterContext filter() {
-			return getRuleContext(FilterContext.class,0);
-		}
-		public RpContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_rp; }
+		public CommaRPContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterRp(this);
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterCommaRP(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitRp(this);
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitCommaRP(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitRp(this);
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitCommaRP(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class DotContext extends RpContext {
+		public DotContext(RpContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterDot(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitDot(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitDot(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class TagContext extends RpContext {
+		public TagNameContext tagName() {
+			return getRuleContext(TagNameContext.class,0);
+		}
+		public TagContext(RpContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterTag(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitTag(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitTag(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class DdotContext extends RpContext {
+		public DdotContext(RpContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterDdot(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitDdot(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitDdot(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class TextContext extends RpContext {
+		public TextContext(RpContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterText(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitText(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitText(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class AttributeContext extends RpContext {
+		public AttNameContext attName() {
+			return getRuleContext(AttNameContext.class,0);
+		}
+		public AttributeContext(RpContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterAttribute(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitAttribute(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitAttribute(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class DslashRPContext extends RpContext {
+		public List<RpContext> rp() {
+			return getRuleContexts(RpContext.class);
+		}
+		public RpContext rp(int i) {
+			return getRuleContext(RpContext.class,i);
+		}
+		public DslashRPContext(RpContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterDslashRP(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitDslashRP(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitDslashRP(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class SlashRPContext extends RpContext {
+		public List<RpContext> rp() {
+			return getRuleContexts(RpContext.class);
+		}
+		public RpContext rp(int i) {
+			return getRuleContext(RpContext.class,i);
+		}
+		public SlashRPContext(RpContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterSlashRP(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitSlashRP(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitSlashRP(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -248,36 +434,55 @@ public class XQueryParser extends Parser {
 			switch (_input.LA(1)) {
 			case STRING:
 				{
+				_localctx = new TagContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+
 				setState(27);
 				tagName();
 				}
 				break;
 			case T__4:
 				{
+				_localctx = new StarContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(28);
 				match(T__4);
 				}
 				break;
 			case T__5:
 				{
+				_localctx = new DotContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(29);
 				match(T__5);
 				}
 				break;
 			case T__6:
 				{
+				_localctx = new DdotContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(30);
 				match(T__6);
 				}
 				break;
 			case T__7:
 				{
+				_localctx = new TextContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(31);
 				match(T__7);
 				}
 				break;
 			case T__8:
 				{
+				_localctx = new AttributeContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(32);
 				match(T__8);
 				setState(33);
@@ -286,6 +491,9 @@ public class XQueryParser extends Parser {
 				break;
 			case T__9:
 				{
+				_localctx = new ParenContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(34);
 				match(T__9);
 				setState(35);
@@ -311,7 +519,7 @@ public class XQueryParser extends Parser {
 					switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 					case 1:
 						{
-						_localctx = new RpContext(_parentctx, _parentState);
+						_localctx = new SlashRPContext(new RpContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_rp);
 						setState(40);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
@@ -323,7 +531,7 @@ public class XQueryParser extends Parser {
 						break;
 					case 2:
 						{
-						_localctx = new RpContext(_parentctx, _parentState);
+						_localctx = new DslashRPContext(new RpContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_rp);
 						setState(43);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
@@ -335,7 +543,7 @@ public class XQueryParser extends Parser {
 						break;
 					case 3:
 						{
-						_localctx = new RpContext(_parentctx, _parentState);
+						_localctx = new CommaRPContext(new RpContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_rp);
 						setState(46);
 						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
@@ -347,7 +555,7 @@ public class XQueryParser extends Parser {
 						break;
 					case 4:
 						{
-						_localctx = new RpContext(_parentctx, _parentState);
+						_localctx = new FilterRPContext(new RpContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_rp);
 						setState(49);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
@@ -380,33 +588,158 @@ public class XQueryParser extends Parser {
 	}
 
 	public static class FilterContext extends ParserRuleContext {
+		public FilterContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_filter; }
+	 
+		public FilterContext() { }
+		public void copyFrom(FilterContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class EqFilterContext extends FilterContext {
 		public List<RpContext> rp() {
 			return getRuleContexts(RpContext.class);
 		}
 		public RpContext rp(int i) {
 			return getRuleContext(RpContext.class,i);
 		}
+		public EqFilterContext(FilterContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterEqFilter(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitEqFilter(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitEqFilter(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class NotFilterContext extends FilterContext {
+		public FilterContext filter() {
+			return getRuleContext(FilterContext.class,0);
+		}
+		public NotFilterContext(FilterContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterNotFilter(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitNotFilter(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitNotFilter(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class AndFilterContext extends FilterContext {
 		public List<FilterContext> filter() {
 			return getRuleContexts(FilterContext.class);
 		}
 		public FilterContext filter(int i) {
 			return getRuleContext(FilterContext.class,i);
 		}
-		public FilterContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_filter; }
+		public AndFilterContext(FilterContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterFilter(this);
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterAndFilter(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitFilter(this);
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitAndFilter(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitFilter(this);
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitAndFilter(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class IsFilterContext extends FilterContext {
+		public List<RpContext> rp() {
+			return getRuleContexts(RpContext.class);
+		}
+		public RpContext rp(int i) {
+			return getRuleContext(RpContext.class,i);
+		}
+		public IsFilterContext(FilterContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterIsFilter(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitIsFilter(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitIsFilter(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class RpFilterContext extends FilterContext {
+		public RpContext rp() {
+			return getRuleContext(RpContext.class,0);
+		}
+		public RpFilterContext(FilterContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterRpFilter(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitRpFilter(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitRpFilter(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class OrFilterContext extends FilterContext {
+		public List<FilterContext> filter() {
+			return getRuleContexts(FilterContext.class);
+		}
+		public FilterContext filter(int i) {
+			return getRuleContext(FilterContext.class,i);
+		}
+		public OrFilterContext(FilterContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterOrFilter(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitOrFilter(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitOrFilter(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class ParenFilterContext extends FilterContext {
+		public FilterContext filter() {
+			return getRuleContext(FilterContext.class,0);
+		}
+		public ParenFilterContext(FilterContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterParenFilter(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitParenFilter(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitParenFilter(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -431,12 +764,19 @@ public class XQueryParser extends Parser {
 			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 			case 1:
 				{
+				_localctx = new RpFilterContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+
 				setState(60);
 				rp(0);
 				}
 				break;
 			case 2:
 				{
+				_localctx = new EqFilterContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(61);
 				rp(0);
 				setState(62);
@@ -447,6 +787,9 @@ public class XQueryParser extends Parser {
 				break;
 			case 3:
 				{
+				_localctx = new EqFilterContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(65);
 				rp(0);
 				setState(66);
@@ -457,6 +800,9 @@ public class XQueryParser extends Parser {
 				break;
 			case 4:
 				{
+				_localctx = new IsFilterContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(69);
 				rp(0);
 				setState(70);
@@ -467,6 +813,9 @@ public class XQueryParser extends Parser {
 				break;
 			case 5:
 				{
+				_localctx = new IsFilterContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(73);
 				rp(0);
 				setState(74);
@@ -477,6 +826,9 @@ public class XQueryParser extends Parser {
 				break;
 			case 6:
 				{
+				_localctx = new ParenFilterContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(77);
 				match(T__9);
 				setState(78);
@@ -487,6 +839,9 @@ public class XQueryParser extends Parser {
 				break;
 			case 7:
 				{
+				_localctx = new NotFilterContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
 				setState(81);
 				match(T__20);
 				setState(82);
@@ -508,7 +863,7 @@ public class XQueryParser extends Parser {
 					switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 					case 1:
 						{
-						_localctx = new FilterContext(_parentctx, _parentState);
+						_localctx = new AndFilterContext(new FilterContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_filter);
 						setState(85);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
@@ -520,7 +875,7 @@ public class XQueryParser extends Parser {
 						break;
 					case 2:
 						{
-						_localctx = new FilterContext(_parentctx, _parentState);
+						_localctx = new OrFilterContext(new FilterContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_filter);
 						setState(88);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");

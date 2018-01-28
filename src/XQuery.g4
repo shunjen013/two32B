@@ -6,29 +6,29 @@ ap
   ;
 
 rp
-  : tagName
-  | '*'
-  | '.'
-  | '..'
-  | 'text()'
-  | '@'attName
-  | '(' rp ')'
-  | rp '/' rp
-  | rp '//' rp
-  | rp '[' filter ']'
-  | rp ',' rp
+  : tagName           #tag
+  | '*'               #star
+  | '.'               #dot
+  | '..'              #ddot
+  | 'text()'          #text
+  | '@'attName        #attribute
+  | '(' rp ')'        #paren
+  | rp '/' rp         #slashRP
+  | rp '//' rp        #dslashRP
+  | rp '[' filter ']' #filterRP
+  | rp ',' rp         #commaRP
   ;
 
 filter
-  : rp
-  | rp '=' rp
-  | rp 'eq' rp
-  | rp '==' rp
-  | rp 'is' rp
-  | '(' filter ')'
-  | filter 'and' filter
-  | filter 'or' filter
-  | 'not' filter
+  : rp                   #rpFilter
+  | rp '=' rp            #eqFilter
+  | rp 'eq' rp           #eqFilter
+  | rp '==' rp           #isFilter
+  | rp 'is' rp           #isFilter
+  | '(' filter ')'       #parenFilter
+  | filter 'and' filter  #andFilter
+  | filter 'or' filter   #orFilter
+  | 'not' filter         #notFilter
   ;
 
 fileName: STRING;
