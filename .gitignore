@@ -9,3 +9,7 @@ src/HelloLexer.tokens
 src/HelloListener.java
 src/HelloParser.java
 *.class
+out/*
+.idea/
+two32B.iml
+

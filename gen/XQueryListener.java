@@ -1,4 +1,4 @@
-// Generated from XQuery.g4 by ANTLR 4.7.1
+// Generated from /Users/weiwei/work/two32B/src/XQuery.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -7,15 +7,29 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface XQueryListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link XQueryParser#ap}.
+	 * Enter a parse tree produced by the {@code slash}
+	 * labeled alternative in {@link XQueryParser#ap}.
 	 * @param ctx the parse tree
 	 */
-	void enterAp(XQueryParser.ApContext ctx);
+	void enterSlash(XQueryParser.SlashContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link XQueryParser#ap}.
+	 * Exit a parse tree produced by the {@code slash}
+	 * labeled alternative in {@link XQueryParser#ap}.
 	 * @param ctx the parse tree
 	 */
-	void exitAp(XQueryParser.ApContext ctx);
+	void exitSlash(XQueryParser.SlashContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code dSlash}
+	 * labeled alternative in {@link XQueryParser#ap}.
+	 * @param ctx the parse tree
+	 */
+	void enterDSlash(XQueryParser.DSlashContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code dSlash}
+	 * labeled alternative in {@link XQueryParser#ap}.
+	 * @param ctx the parse tree
+	 */
+	void exitDSlash(XQueryParser.DSlashContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link XQueryParser#rp}.
 	 * @param ctx the parse tree
@@ -27,15 +41,15 @@ public interface XQueryListener extends ParseTreeListener {
 	 */
 	void exitRp(XQueryParser.RpContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link XQueryParser#f}.
+	 * Enter a parse tree produced by {@link XQueryParser#filter}.
 	 * @param ctx the parse tree
 	 */
-	void enterF(XQueryParser.FContext ctx);
+	void enterFilter(XQueryParser.FilterContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link XQueryParser#f}.
+	 * Exit a parse tree produced by {@link XQueryParser#filter}.
 	 * @param ctx the parse tree
 	 */
-	void exitF(XQueryParser.FContext ctx);
+	void exitFilter(XQueryParser.FilterContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link XQueryParser#fileName}.
 	 * @param ctx the parse tree

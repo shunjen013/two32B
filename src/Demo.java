@@ -11,8 +11,8 @@ public class Demo {
 
     public static void main(String[] args) {
         // Parse xml
-        String[] xmlArgs = new String[1];
-        xmlArgs[0] = "../test.xml";
+        /*String[] xmlArgs = new String[1];
+        xmlArgs[0] = "test.xml";
         Document doc = null;
         try {
             doc = DOMEcho.parseXmlToDom(xmlArgs);
@@ -30,18 +30,21 @@ public class Demo {
         }
 
         System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+        */
 
         // Parse xquery
-        String xquery = "doc(\"j_caesar.xml\")//ACT[./TITLE]/*/SPEECH/../TITLE";
+        String xquery = "doc(\"j_caesar.xml\")//(ACT,PERSONAE)/TITLE";
         CharStream input = new ANTLRInputStream(xquery);
         XQueryLexer lexer = new XQueryLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         XQueryParser parser = new XQueryParser(tokens);
         ParseTree tree = parser.ap();
-        System.out.println(tree.toStringTree(parser));
-        System.out.println(tree);
-        System.out.println(tree.getChild(0));
-        System.out.println(tree.getChild(1));
+        XQueryHelper v = new XQueryHelper();
+        v.visit( tree );
+//        System.out.println(tree.toStringTree(parser));
+//        System.out.println(tree);
+//        System.out.println(tree.getChild(0));
+//        System.out.println(tree.getChild(1));
         //System.out.println(tree.getChild(1).getPayload().getText());
        /*parser.setBuildParseTree(true);
         

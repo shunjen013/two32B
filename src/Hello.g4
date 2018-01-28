@@ -3,8 +3,8 @@ grammar  Hello;
 //id   : STRING;
 
 ap
-  : 'doc("' fileName '")' '/'rp
-  | 'doc("' fileName '")' '//'rp
+  : 'doc("' fileName '")' '/' rp
+  | 'doc("' fileName '")' '//' rp
   ;
 
 rp

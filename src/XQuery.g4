@@ -1,18 +1,34 @@
 grammar  XQuery;
 
 ap
-  : 'doc("' fileName '")' '/'rp
-  | 'doc("' fileName '")' '//'rp
+  : 'doc("' fileName '")' '/' rp  #slash
+  | 'doc("' fileName '")' '//' rp #dSlash
   ;
 
 rp
-  : tagName | '*' | '.' | '..' | 'text()'|'@'attName
-  | '(' rp ')' | rp '/' rp | rp '//' rp | rp '[' f ']' | rp ',' rp
+  : tagName
+  | '*'
+  | '.'
+  | '..'
+  | 'text()'
+  | '@'attName
+  | '(' rp ')'
+  | rp '/' rp
+  | rp '//' rp
+  | rp '[' filter ']'
+  | rp ',' rp
   ;
 
-f
-  : rp | rp '=' rp | rp 'eq' rp | rp '==' rp | rp 'is' rp |
-  | '(' f ')' | f 'and' f | f 'or' f | 'not' f
+filter
+  : rp
+  | rp '=' rp
+  | rp 'eq' rp
+  | rp '==' rp
+  | rp 'is' rp
+  | '(' filter ')'
+  | filter 'and' filter
+  | filter 'or' filter
+  | 'not' filter
   ;
 
 fileName: STRING;

@@ -1,87 +1,99 @@
-// Generated from XPath.g4 by ANTLR 4.7.1
+// Generated from /Users/weiwei/work/two32B/src/XQuery.g4 by ANTLR 4.7
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link XPathListener},
+ * This class provides an empty implementation of {@link XQueryListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-public class XPathBaseListener implements XPathListener {
+public class XQueryBaseListener implements XQueryListener {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAp(XPathParser.ApContext ctx) { }
+	@Override public void enterSlash(XQueryParser.SlashContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAp(XPathParser.ApContext ctx) { }
+	@Override public void exitSlash(XQueryParser.SlashContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRp(XPathParser.RpContext ctx) { }
+	@Override public void enterDSlash(XQueryParser.DSlashContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRp(XPathParser.RpContext ctx) { }
+	@Override public void exitDSlash(XQueryParser.DSlashContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterF(XPathParser.FContext ctx) { }
+	@Override public void enterRp(XQueryParser.RpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitF(XPathParser.FContext ctx) { }
+	@Override public void exitRp(XQueryParser.RpContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFileName(XPathParser.FileNameContext ctx) { }
+	@Override public void enterFilter(XQueryParser.FilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFileName(XPathParser.FileNameContext ctx) { }
+	@Override public void exitFilter(XQueryParser.FilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTagName(XPathParser.TagNameContext ctx) { }
+	@Override public void enterFileName(XQueryParser.FileNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTagName(XPathParser.TagNameContext ctx) { }
+	@Override public void exitFileName(XQueryParser.FileNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAttName(XPathParser.AttNameContext ctx) { }
+	@Override public void enterTagName(XQueryParser.TagNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAttName(XPathParser.AttNameContext ctx) { }
+	@Override public void exitTagName(XQueryParser.TagNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAttName(XQueryParser.AttNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAttName(XQueryParser.AttNameContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
