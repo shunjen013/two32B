@@ -31,9 +31,55 @@ filter
   | 'not' filter         #notFilter
   ;
 
-fileName: STRING;
-tagName : STRING;
-attName : STRING;
+xq
+  : var                                             #varXQ
+  | stringConstant                                  #strXQ
+  | ap                                              #apXQ
+  | '(' xq ')'                                      #parenXQ
+  | xq ',' xq                                       #commaXQ
+  | xq '/' rp                                       #slashXQ
+  | xq '//' rp                                      #dslashXQ
+  | '<' tagName '>' '{' xq '}' '</' tagName '>'     #tagXQ      // back reference?
+  | forClause letClause? whereClause? returnClause  #flwrXQ
+  | letClause xq                                    #letXQ
+  ;
+
+forClause
+  : 'for' var 'in' xq (',' var 'in' xq)*    #forCl
+  ;
+
+letClause
+  : 'let' var ':=' xq (',' var ':=' xq)*    #letCl
+  ;
+
+whereClause
+  : 'where' cond                            #whereCl
+  ;
+
+returnClause
+  : 'return' xq                             #retCl
+  ;
+
+cond
+  : xq '=' xq                                               #eqCond
+  | xq 'eq' xq                                              #eqCond
+  | xq '==' xq                                              #isCond
+  | xq 'is' xq                                              #isCond
+  | 'empty' '(' xq ')'                                      #empCond
+  | 'some' var 'in' xq (',' var 'in' xq)* 'satisfies' cond  #someCond
+  | '(' cond ')'                                            #parenCond
+  | cond 'and' cond                                         #andCond
+  | cond 'or' cond                                          #orCond
+  | 'not' cond                                              #notCond
+  ;
+
+
+fileName        : STRING;
+tagName         : STRING;
+attName         : STRING;
+var             : '$' STRING;
+stringConstant  : STRING;
+
 
 STRING: CHAR+;
 CHAR: ('a'..'z' | 'A'..'Z' | '0'..'9' | '_' | '.');

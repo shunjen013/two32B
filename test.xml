@@ -1,6 +1,6 @@
 <?xml version = "1.0"?>
 <class>
-   <student rollno = "393">
+   <student no = "393">
       <firstname>dinkar</firstname>
       <lastname>kad</lastname>
       <nickname>dinkar</nickname>
@@ -8,6 +8,7 @@
    </student>
    
    <student rollno = "493">
+      lalala
       <firstname>Vaneet</firstname>
       <lastname>Gupta</lastname>
       <nickname>vinni</nickname>
@@ -19,5 +20,13 @@
       <lastname>singn</lastname>
       <nickname>jazz</nickname>
       <marks>90</marks>
+      <hobby>dance</hobby>
    </student>
+
+   <teacher rollno = "001">
+      lololo
+      <firstname>shunjen</firstname>
+      <lastname>lee</lastname>
+      lelele
+   </teacher>
 </class>

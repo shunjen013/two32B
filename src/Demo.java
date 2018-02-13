@@ -7,12 +7,15 @@ import  org.antlr.v4.runtime.*;
 import  org.antlr.v4.runtime.tree.*;
 import  org.antlr.v4.runtime.tree.pattern.*;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
 
 public class Demo {
 
     public static void main(String[] args) {
         // Parse xquery
-        String xquery = "doc(\"j_caesar.xml\")/(ACT,PERSONAE)/TITLE";
+        String xquery = "doc(\"j_caesar.xml\")//(ACT,PERSONAE)/TITLE";
         System.out.println(xquery);
         CharStream input = new ANTLRInputStream(xquery);
         XQueryLexer lexer = new XQueryLexer(input);
@@ -22,6 +25,21 @@ public class Demo {
         XQueryHelper v = new XQueryHelper();
         List<Node> results = v.visit( tree );
 
+        System.out.println("Result:");
+        for (Node n: results) {
+            System.out.println(n.getNodeName() + " : " + n.getTextContent());
+        }
+
+        Document doc = null;
+        try {
+            DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            doc = dBuilder.newDocument();
+            Element rootElement = doc.createElement("rootEle");
+            doc.appendChild(rootElement);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(doc.getDocumentElement());
 
         // Print out the DOM result
 //        try {
