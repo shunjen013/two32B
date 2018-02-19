@@ -1,8 +1,10 @@
 grammar  XQuery;
 
 ap
-  : 'doc("' fileName '")' '/' rp  #slash
-  | 'doc("' fileName '")' '//' rp #dSlash
+  : 'doc(' fileName ')' '/' rp        #slash
+  | 'document(' fileName ')' '/' rp   #slash
+  | 'doc(' fileName ')' '//' rp       #dSlash
+  | 'document(' fileName ')' '//' rp  #dSlash
   ;
 
 rp
@@ -74,13 +76,17 @@ cond
   ;
 
 
-fileName        : STRING;
+fileName        : STRINGCONSTANT;
 tagName         : STRING;
 attName         : STRING;
 var             : '$' STRING;
-stringConstant  : STRING;
+stringConstant  : STRINGCONSTANT;
 
 
+//SENTENCE: CHARANDSPACE+;
 STRING: CHAR+;
 CHAR: ('a'..'z' | 'A'..'Z' | '0'..'9' | '_' | '.');
+//DQUOTE: '"';
+STRINGCONSTANT: '"' ~'"'* '"';
+//CHARANDSPACE: ('a'..'z' | 'A'..'Z' | '0'..'9' | '_' | '.' | ' ');
 WS: [ \t\r\n]+ -> skip;

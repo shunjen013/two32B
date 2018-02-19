@@ -9,70 +9,98 @@ import  org.antlr.v4.runtime.tree.pattern.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 
 public class Demo {
 
     public static void main(String[] args) {
-        // Parse xquery
-        String xquery = "doc(\"j_caesar.xml\")//(ACT,PERSONAE)/TITLE";
-        System.out.println(xquery);
-        CharStream input = new ANTLRInputStream(xquery);
-        XQueryLexer lexer = new XQueryLexer(input);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        XQueryParser parser = new XQueryParser(tokens);
-        ParseTree tree = parser.ap();
-        XQueryHelper v = new XQueryHelper();
-        List<Node> results = v.visit( tree );
+
+        String xquery = null;
+        CharStream input = null;
+        XQueryLexer lexer = null;
+        CommonTokenStream tokens = null;
+        XQueryParser parser = null;
+        ParseTree tree = null;
+        XQueryHelper v = null;
+        List<Node> results = null;
+
+        // Parse xpath
+        xquery = "doc(\"j_caesar.xml\")//(ACT,PERSONAE)/TITLE";
+        System.out.println("XQuery:\n" + xquery);
+        input = new ANTLRInputStream(xquery);
+        lexer = new XQueryLexer(input);
+        tokens = new CommonTokenStream(lexer);
+        parser = new XQueryParser(tokens);
+        tree = parser.ap();
+        v = new XQueryHelper();
+        results = v.visit( tree );
 
         System.out.println("Result:");
-        for (Node n: results) {
-            System.out.println(n.getNodeName() + " : " + n.getTextContent());
-        }
-
-        Document doc = null;
         try {
-            DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            doc = dBuilder.newDocument();
-            Element rootElement = doc.createElement("rootEle");
-            doc.appendChild(rootElement);
+            for (Node n : results) {
+                DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+                Document doc = dBuilder.newDocument();
+                Node nCopy = n.cloneNode(true);
+                doc.adoptNode(nCopy);
+                doc.appendChild(nCopy);
+                System.out.println(getNiceLyFormattedXMLDocument(doc));
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(doc.getDocumentElement());
 
-        // Print out the DOM result
-//        try {
-//            OutputStreamWriter outWriter =
-//                    new OutputStreamWriter(System.out, "UTF-8");
-//            for(int i=0; i<results.size(); i++) {
-//                new DOMEcho(new PrintWriter(outWriter, true)).echo(results.get(i));
-//            }
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        // Parse xquery
+        xquery = "<result>{\n" +
+                "for $a in document(\"j_caesar.xml\")//PERSONAE, $b in $a/PERSONA \n" +
+                "  where ($b/text() = \"JULIUS CAESAR\") or ($b/text() = \"Another Poet\")\n" +
+                "   return $b\n" +
+                "}\n" +
+                "</result>";
+        System.out.println("XQuery:\n" + xquery);
+        input = new ANTLRInputStream(xquery);
+        lexer = new XQueryLexer(input);
+        tokens = new CommonTokenStream(lexer);
+        parser = new XQueryParser(tokens);
+        tree = parser.xq();
+        v = new XQueryHelper();
+        results = v.visit( tree );
 
-//        System.out.println(tree.toStringTree(parser));
-//        System.out.println(tree);R
-//        System.out.println(tree.getChild(0));
-//        System.out.println(tree.getChild(1));
-        //System.out.println(tree.getChild(1).getPayload().getText());
-       /*parser.setBuildParseTree(true);
-        
-        ParseTreePattern pattern = parser.compileParseTreePattern(xquery, 0);
-        ParseTree tree = pattern.getPatternTree();
-        System.out.println(tree);
-        System.out.println(tree.getChild(0));
-        System.out.println(tree.getChild(1));
-        System.out.println(tree.getChild(2));
-        System.out.println(tree.getPayload());
-        System.out.println(tree.getChild(0).getPayload());
-        System.out.println(tree.getChild(1).getPayload());
-        System.out.println(tree.getChild(2).getPayload());
-        System.out.println(tree.getChild(1).getChild(0));
-        //System.out.println(parser.getCurrentToken());
-*/
+        System.out.println("Result:");
+        try {
+            for (Node n : results) {
+                DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+                Document doc = dBuilder.newDocument();
+                Node nCopy = n.cloneNode(true);
+                doc.adoptNode(nCopy);
+                doc.appendChild(nCopy);
+                System.out.println(getNiceLyFormattedXMLDocument(doc));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    public static String getNiceLyFormattedXMLDocument(Document doc) throws IOException, TransformerException {
+        TransformerFactory tf = TransformerFactory.newInstance();
+        Transformer transformer = tf.newTransformer();
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+        transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+
+        Writer stringWriter = new StringWriter();
+        StreamResult streamResult = new StreamResult(stringWriter);
+        transformer.transform(new DOMSource(doc), streamResult);
+        String result = stringWriter.toString();
+
+        return result;
     }
 }
 
