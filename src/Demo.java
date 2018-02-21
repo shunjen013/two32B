@@ -5,7 +5,6 @@ import java.util.*;
 
 import  org.antlr.v4.runtime.*;
 import  org.antlr.v4.runtime.tree.*;
-import  org.antlr.v4.runtime.tree.pattern.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -56,12 +55,12 @@ public class Demo {
         }
 
         // Parse xquery
-        xquery = "<result>{\n" +
-                "for $a in document(\"j_caesar.xml\")//PERSONAE, $b in $a/PERSONA \n" +
-                "  where ($b/text() = \"JULIUS CAESAR\") or ($b/text() = \"Another Poet\")\n" +
-                "   return $b\n" +
-                "}\n" +
-                "</result>";
+        xquery = "for $a in document(\"test.xml\")//class/student\n" +
+                "where some $b in $a//nickname satisfies $b/text() = \"jazz2\"\n" +
+                "return $a";
+        xquery ="for $a in document(\"j_caesar.xml\")//PERSONAE, $b in $a/PERSONA \n" +
+                "where not (($b/text() = \"JULIUS CAESAR\") or ($b/text() = \"Another Poet\") )\n" +
+                "return $b";
         System.out.println("XQuery:\n" + xquery);
         input = new ANTLRInputStream(xquery);
         lexer = new XQueryLexer(input);

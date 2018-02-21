@@ -4,6 +4,8 @@
       <firstname>dinkar</firstname>
       <lastname>kad</lastname>
       <nickname>dinkar</nickname>
+      <nickname>dinkar2</nickname>
+      <nickname>dinkar3</nickname>
       <marks>85</marks>
    </student>
    
@@ -12,6 +14,8 @@
       <firstname>Vaneet</firstname>
       <lastname>Gupta</lastname>
       <nickname>vinni</nickname>
+      <nickname>vinni2</nickname>
+      <nickname>vinni3</nickname>
       <marks>95</marks>
    </student>
    
@@ -19,6 +23,8 @@
       <firstname>jasvir</firstname>
       <lastname>singn</lastname>
       <nickname>jazz</nickname>
+      <nickname>jazz2</nickname>
+      <nickname>jazz3</nickname>
       <marks>90</marks>
       <hobby>dance</hobby>
    </student>
