@@ -21,65 +21,61 @@ import javax.xml.transform.stream.StreamResult;
 
 
 public class Demo {
+    // Input command arguments
+    // args[0]: 0 for xpath, 1 for xquery
+    // args[1]: test input file name
 
     public static final Charset UTF_8 = Charset.forName("UTF-8");
 
     public static void main(String[] args) {
-
-        String xquery = null;
-        CharStream input = null;
-        XQueryLexer lexer = null;
-        CommonTokenStream tokens = null;
-        XQueryParser parser = null;
-        ParseTree tree = null;
-        XQueryHelper v = null;
-        List<Node> results = null;
-
-        // Parse xpath
-        /*
-        xquery = "doc(\"j_caesar.xml\")//(ACT,PERSONAE)/TITLE";
-        System.out.println("XQuery:\n" + xquery);
-        input = new ANTLRInputStream(xquery);
-        lexer = new XQueryLexer(input);
-        tokens = new CommonTokenStream(lexer);
-        parser = new XQueryParser(tokens);
-        tree = parser.ap();
-        v = new XQueryHelper();
-        results = v.visit( tree );
-
-        System.out.println("Result:");
-        try {
-            for (Node n : results) {
-                DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-                Document doc = dBuilder.newDocument();
-                Node nCopy = n.cloneNode(true);
-                doc.adoptNode(nCopy);
-                doc.appendChild(nCopy);
-                System.out.println(getNiceLyFormattedXMLDocument(doc));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        String testInput = readFile(args[1], UTF_8);
+        System.out.println("Input: \n" + testInput + "\n");
+        List<Node> result = null;
+        switch(Integer.parseInt(args[0])) {
+            case 0:  result = testXPath(testInput);
+                     break;
+            case 1:  result = testXQuery(testInput);
+                     break;
+            default: System.out.println("Invalid command");
+                     break;
         }
-        */
+        printResult(result);
+    }
 
-        // Read input file
+    public static List<Node> testXPath(String xpath) {
+        CharStream input = new ANTLRInputStream(xpath);
+        XQueryLexer lexer = new XQueryLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        XQueryParser parser = new XQueryParser(tokens);
+        ParseTree tree = parser.ap();
+        XQueryHelper v = new XQueryHelper();
+        List<Node> results = v.visit( tree );
+        return results;
+    }
+
+    public static List<Node> testXQuery(String xquery) {
+        // Parse xquery
+        CharStream input = new ANTLRInputStream(xquery);
+        XQueryLexer lexer = new XQueryLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        XQueryParser parser = new XQueryParser(tokens);
+        ParseTree tree = parser.xq();
+        XQueryHelper v = new XQueryHelper();
+        List<Node> results = v.visit( tree );
+        return results;
+    }
+
+    public static String readFile(String path, Charset encoding) {
+        byte[] encoded = null;
         try {
-            xquery = readFile(args[0], UTF_8);
+            encoded = Files.readAllBytes(Paths.get(path));
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return new String(encoded, encoding);
+    }
 
-        // Parse xquery
-        input = new ANTLRInputStream(xquery);
-        lexer = new XQueryLexer(input);
-        tokens = new CommonTokenStream(lexer);
-        parser = new XQueryParser(tokens);
-        tree = parser.xq();
-        v = new XQueryHelper();
-        results = v.visit( tree );
-
-        // Print result
-        System.out.println("Input Query: \n" + xquery);
+    public static void printResult(List<Node> results) {
         System.out.println("Result:");
         try {
             for (Node n : results) {
@@ -94,6 +90,7 @@ public class Demo {
             e.printStackTrace();
         }
     }
+
     public static String getNiceLyFormattedXMLDocument(Document doc) throws IOException, TransformerException {
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
@@ -109,12 +106,6 @@ public class Demo {
         String result = stringWriter.toString();
 
         return result;
-    }
-
-    public static String readFile(String path, Charset encoding)
-            throws IOException {
-        byte[] encoded = Files.readAllBytes(Paths.get(path));
-        return new String(encoded, encoding);
     }
 }
 
