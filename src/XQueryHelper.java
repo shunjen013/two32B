@@ -16,8 +16,8 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     // Ap functions
     // [doc(filename)/rp]_A -> [rp]_R(root(filename))
     public List<Node> visitSlash(XQueryParser.SlashContext ctx) {
-        System.err.println("Enter Ap Slash");
-        System.err.println(removeHeadTail(ctx.fileName().getText()));
+        //System.err.println("Enter Ap Slash");
+        //System.err.println(removeHeadTail(ctx.fileName().getText()));
 
         // read xml and get dom root node
         Document doc = getDomRootNode(removeHeadTail(ctx.fileName().getText()));
@@ -28,8 +28,8 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
 
     // [doc(filename)//rp]_A -> [.//rp]_R(root(filename))
     public List<Node> visitDSlash(XQueryParser.DSlashContext ctx) {
-        System.err.println("Enter Ap Dslash");
-        System.err.println(removeHeadTail(ctx.fileName().getText()));
+        //System.err.println("Enter Ap Dslash");
+        //System.err.println(removeHeadTail(ctx.fileName().getText()));
 
         // read xml and get dom root node
         Document doc = getDomRootNode(removeHeadTail(ctx.fileName().getText()));
@@ -45,13 +45,13 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
 
     // Rp functions
     public List<Node> visitParen(XQueryParser.ParenContext ctx) {
-        System.err.println("Enter Rp Paren");
+        //System.err.println("Enter Rp Paren");
         visit(ctx.rp());
         return currNodes;
     }
 
     public List<Node> visitStar(XQueryParser.StarContext ctx) {
-        System.err.println("Star");
+        //System.err.println("Star");
         List<Node> ret = new ArrayList<>();
         for(Node t : currNodes) {
             ret.addAll(children(t));
@@ -61,7 +61,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitFilterRP(XQueryParser.FilterRPContext ctx) {
-        System.err.println("Enter Rp FilterRP");
+        //System.err.println("Enter Rp FilterRP");
         visit(ctx.rp());
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         List<Node> ret = new ArrayList<>();
@@ -77,7 +77,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitCommaRP(XQueryParser.CommaRPContext ctx) {
-        System.err.println("Enter Rp CommaRp");
+        //System.err.println("Enter Rp CommaRp");
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         visit(ctx.rp(1));
         List<Node> prevResult = new ArrayList<>(currNodes);
@@ -88,12 +88,12 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitDot(XQueryParser.DotContext ctx) {
-        System.err.println("Enter Rp Dot");
+        //System.err.println("Enter Rp Dot");
         return currNodes;
     }
 
     public List<Node> visitTag(XQueryParser.TagContext ctx) {
-        System.err.println("Enter Rp Tag: "+ctx.getText());
+        //System.err.println("Enter Rp Tag: "+ctx.getText());
         String tagName = ctx.tagName().getText(); // not sure, haven't tested
         //System.err.println(tagName);
         List<Node> ret = new ArrayList<>();
@@ -111,7 +111,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitDdot(XQueryParser.DdotContext ctx) {
-        System.err.println("Enter Rp Ddot");
+        //System.err.println("Enter Rp Ddot");
         List<Node> ret = new ArrayList<>();
         for(Node t : currNodes) {
             ret.add(parent(t));
@@ -121,7 +121,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitText(XQueryParser.TextContext ctx) {
-        System.err.println("Enter Rp Text");
+        //System.err.println("Enter Rp Text");
         List<Node> ret = new ArrayList<>();
         for(Node t : currNodes) {
             ret.addAll(txt(t));
@@ -142,7 +142,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitDslashRP(XQueryParser.DslashRPContext ctx) {
-        System.err.println("Enter Rp Dslash");
+        //System.err.println("Enter Rp Dslash");
         visit(ctx.rp(0));
         int idx = 0;
         while (idx < currNodes.size()) {
@@ -155,7 +155,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitSlashRP(XQueryParser.SlashRPContext ctx) {
-        System.err.println("Enter Rp Slash");
+        //System.err.println("Enter Rp Slash");
         visit(ctx.rp(0));
         visit(ctx.rp(1));
         currNodes = unique(currNodes);
@@ -164,14 +164,14 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
 
     // Filter functions
     public List<Node> visitRpFilter(XQueryParser.RpFilterContext ctx) {
-        System.err.println("Enter Filter Rp");
+        //System.err.println("Enter Filter Rp");
         visit(ctx.rp());
         currFilter = currNodes.size() != 0;
         return currNodes;
     }
 
     public List<Node> visitEqFilter(XQueryParser.EqFilterContext ctx) {
-        System.err.println("Enter Filter Eq");
+        //System.err.println("Enter Filter Eq");
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         visit(ctx.rp(0));
         List<Node> prevResult = new ArrayList<>(currNodes);
@@ -190,7 +190,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitIsFilter(XQueryParser.IsFilterContext ctx) {
-        System.err.println("Enter Filter Is");
+        //System.err.println("Enter Filter Is");
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         visit(ctx.rp(0));
         List<Node> prevResult = new ArrayList<>(currNodes);
@@ -209,14 +209,14 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitNotFilter(XQueryParser.NotFilterContext ctx) {
-        System.err.println("Enter Filter Not");
+        //System.err.println("Enter Filter Not");
         visit(ctx.filter());
         currFilter = !currFilter;
         return currNodes;
     }
 
     public List<Node> visitAndFilter(XQueryParser.AndFilterContext ctx) {
-        System.err.println("Enter Filter And");
+        //System.err.println("Enter Filter And");
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         visit(ctx.filter(0));
         boolean prevResult = currFilter;
@@ -227,7 +227,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitOrFilter(XQueryParser.OrFilterContext ctx) {
-        System.err.println("Enter Filter Or");
+        //System.err.println("Enter Filter Or");
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         visit(ctx.filter(0));
         boolean prevResult = currFilter;
@@ -238,14 +238,14 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitParenFilter(XQueryParser.ParenFilterContext ctx) {
-        System.err.println("Enter Filter Paren");
+        //System.err.println("Enter Filter Paren");
         visit(ctx.filter());
         return currNodes;
     }
 
     // Xq functions
     public List<Node> visitStrXQ(XQueryParser.StrXQContext ctx) {
-        System.err.println("Enter Xq Str");
+        //System.err.println("Enter Xq Str");
         List<Node> ret = new ArrayList<>();
         ret.add(makeText(removeHeadTail(ctx.stringConstant().STRINGCONSTANT().getText())));
         currNodes = ret;
@@ -253,7 +253,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitSlashXQ(XQueryParser.SlashXQContext ctx) {
-        System.err.println("Enter Xq Slash");
+        //System.err.println("Enter Xq Slash");
         visit(ctx.xq());
         visit(ctx.rp());
         currNodes = unique(currNodes);
@@ -261,7 +261,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitTagXQ(XQueryParser.TagXQContext ctx) {
-        System.err.println("Enter Xq Tag");
+        //System.err.println("Enter Xq Tag");
         visit(ctx.xq());
         List<Node> ret = new ArrayList<>();
         ret.add(makeElem(ctx.tagName(0).STRING().getText(), currNodes));
@@ -270,7 +270,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitFlwrXQ(XQueryParser.FlwrXQContext ctx) {
-        System.err.println("Enter Xq Flwr");
+        //System.err.println("Enter Xq Flwr");
         Map<String, Node> contextCopy = context;
         flwrXqCtx  = ctx;
         visit(ctx.forClause());
@@ -279,19 +279,19 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitApXQ(XQueryParser.ApXQContext ctx) {
-        System.err.println("Enter Xq Ap");
+        //System.err.println("Enter Xq Ap");
         visit(ctx.ap());
         return currNodes;
     }
 
     public List<Node> visitParenXQ(XQueryParser.ParenXQContext ctx) {
-        System.err.println("Enter Xq Paren");
+        //System.err.println("Enter Xq Paren");
         visit(ctx.xq());
         return currNodes;
     }
 
     public List<Node> visitLetXQ(XQueryParser.LetXQContext ctx) {
-        System.err.println("Enter Xq Let");
+        //System.err.println("Enter Xq Let");
         Map<String, Node> contextCopy = context;
         visit(ctx.letClause());
         visit(ctx.xq());
@@ -300,7 +300,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitDslashXQ(XQueryParser.DslashXQContext ctx) {
-        System.err.println("Enter Xq Dslash");
+        //System.err.println("Enter Xq Dslash");
         visit(ctx.xq());
         int idx = 0;
         while (idx < currNodes.size()) {
@@ -313,7 +313,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitCommaXQ(XQueryParser.CommaXQContext ctx) {
-        System.err.println("Enter Xq Comma");
+        //System.err.println("Enter Xq Comma");
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         visit(ctx.xq(1));
         List<Node> prevResult = new ArrayList<>(currNodes);
@@ -324,7 +324,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitVarXQ(XQueryParser.VarXQContext ctx) {
-        System.err.println("Enter Xq Var");
+        //System.err.println("Enter Xq Var");
         List<Node> ret = new ArrayList<>();
         ret.add(context.get(ctx.var().getText()));
         currNodes = ret;
@@ -334,7 +334,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     //Cl functions
 
     public List<Node> visitForCl(XQueryParser.ForClContext ctx) {
-        System.err.println("enter Cl For");
+        //System.err.println("enter Cl For");
         int varNum = ctx.getChildCount() / 4;
         List<Node> ret = new ArrayList<>();
         forClHelper(ctx, 0, varNum, ret);
@@ -373,7 +373,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitLetCl(XQueryParser.LetClContext ctx) {
-        System.err.println("Enter Cl Let");
+        //System.err.println("Enter Cl Let");
         int varNum = ctx.var().size(); //ctx.getChildCount() / 4;
         for (int i = 0; i < varNum; i ++) {
             visit(ctx.xq(i));
@@ -383,13 +383,13 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitWhereCl(XQueryParser.WhereClContext ctx) {
-        System.err.println("Enter Cl Where");
+        //System.err.println("Enter Cl Where");
         visit(ctx.cond());
         return currNodes;
     }
 
     public List<Node> visitRetCl(XQueryParser.RetClContext ctx) {
-        System.err.println("Enter Cl Ret");
+        //System.err.println("Enter Cl Ret");
         visit(ctx.xq());
         return currNodes;
     }
@@ -397,7 +397,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
 
     // Cond functions
     public List<Node> visitOrCond(XQueryParser.OrCondContext ctx) {
-        System.err.println("Enter Cond Or");
+        //System.err.println("Enter Cond Or");
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         visit(ctx.cond(0));
         boolean prevResult = currCond;
@@ -408,14 +408,14 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitEmpCond(XQueryParser.EmpCondContext ctx) {
-        System.err.println("Enter Cond Empty");
+        //System.err.println("Enter Cond Empty");
         visit(ctx.xq());
         currCond = currNodes.size() == 0;
         return currNodes;
     }
 
     public List<Node> visitAndCond(XQueryParser.AndCondContext ctx) {
-        System.err.println("Enter Cond And");
+        //System.err.println("Enter Cond And");
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         visit(ctx.cond(0));
         boolean prevResult = currCond;
@@ -426,7 +426,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitSomeCond(XQueryParser.SomeCondContext ctx) {
-        System.err.println("Enter Cond Some");
+        //System.err.println("Enter Cond Some");
         Map<String, Node> contextCopy = context;
         int varNum = ctx.var().size(); //ctx.getChildCount() - 2) / 4;
         someCondHelper(ctx, 0, varNum);
@@ -458,13 +458,13 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitParenCond(XQueryParser.ParenCondContext ctx) {
-        System.err.println("Enter Cond Paren");
+        //System.err.println("Enter Cond Paren");
         visit(ctx.cond());
         return currNodes;
     }
 
     public List<Node> visitIsCond(XQueryParser.IsCondContext ctx) {
-        System.err.println("Enter Cond Is");
+        //System.err.println("Enter Cond Is");
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         visit(ctx.xq(0));
         List<Node> prevResult = new ArrayList<>(currNodes);
@@ -483,7 +483,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitEqCond(XQueryParser.EqCondContext ctx) {
-        System.err.println("Enter Cond Eq");
+        //System.err.println("Enter Cond Eq");
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         visit(ctx.xq(0));
         List<Node> prevResult = new ArrayList<>(currNodes);
@@ -502,7 +502,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitNotCond(XQueryParser.NotCondContext ctx) {
-        System.err.println("Enter Cond Not");
+        //System.err.println("Enter Cond Not");
         visit(ctx.cond());
         currCond = !currCond;
         return currNodes;
@@ -518,7 +518,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.err.println("Root Element : " + doc.getDocumentElement().getNodeName());
+        //System.err.println("Root Element : " + doc.getDocumentElement().getNodeName());
         return doc;
     }
 

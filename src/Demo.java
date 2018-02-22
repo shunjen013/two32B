@@ -1,6 +1,9 @@
 import org.w3c.dom.*;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 import  org.antlr.v4.runtime.*;
@@ -16,7 +19,10 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 
+
 public class Demo {
+
+    public static final Charset UTF_8 = Charset.forName("UTF-8");
 
     public static void main(String[] args) {
 
@@ -30,6 +36,7 @@ public class Demo {
         List<Node> results = null;
 
         // Parse xpath
+        /*
         xquery = "doc(\"j_caesar.xml\")//(ACT,PERSONAE)/TITLE";
         System.out.println("XQuery:\n" + xquery);
         input = new ANTLRInputStream(xquery);
@@ -53,15 +60,16 @@ public class Demo {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        */
+
+        // Read input file
+        try {
+            xquery = readFile(args[0], UTF_8);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         // Parse xquery
-        xquery = "for $a in document(\"test.xml\")//class/student\n" +
-                "where some $b in $a//nickname satisfies $b/text() = \"jazz2\"\n" +
-                "return $a";
-        xquery ="for $a in document(\"j_caesar.xml\")//PERSONAE, $b in $a/PERSONA \n" +
-                "where not (($b/text() = \"JULIUS CAESAR\") or ($b/text() = \"Another Poet\") )\n" +
-                "return $b";
-        System.out.println("XQuery:\n" + xquery);
         input = new ANTLRInputStream(xquery);
         lexer = new XQueryLexer(input);
         tokens = new CommonTokenStream(lexer);
@@ -70,6 +78,8 @@ public class Demo {
         v = new XQueryHelper();
         results = v.visit( tree );
 
+        // Print result
+        System.out.println("Input Query: \n" + xquery);
         System.out.println("Result:");
         try {
             for (Node n : results) {
@@ -83,7 +93,6 @@ public class Demo {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
     public static String getNiceLyFormattedXMLDocument(Document doc) throws IOException, TransformerException {
         TransformerFactory tf = TransformerFactory.newInstance();
@@ -100,6 +109,12 @@ public class Demo {
         String result = stringWriter.toString();
 
         return result;
+    }
+
+    public static String readFile(String path, Charset encoding)
+            throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, encoding);
     }
 }
 
