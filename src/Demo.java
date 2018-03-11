@@ -77,15 +77,18 @@ public class Demo {
 
     public static void printResult(List<Node> results) {
         System.out.println("Result:");
+
         try {
+            DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document doc = dBuilder.newDocument();
+            Element root = doc.createElement("Root");
+            doc.appendChild(root);
             for (Node n : results) {
-                DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-                Document doc = dBuilder.newDocument();
                 Node nCopy = n.cloneNode(true);
                 doc.adoptNode(nCopy);
-                doc.appendChild(nCopy);
-                System.out.println(getNiceLyFormattedXMLDocument(doc));
+                root.appendChild(nCopy);
             }
+            System.out.println(getNiceLyFormattedXMLDocument(doc));
         } catch (Exception e) {
             e.printStackTrace();
         }
