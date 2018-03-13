@@ -43,7 +43,9 @@ public class Demo {
                 break;
             case 2:
                 rewrite = testRewrite(testInput);
-                System.out.println(rewrite);
+                System.out.println("Rewrite Query: \n" + rewrite);
+                result = testXQuery(rewrite);
+                printResult(result);
                 break;
             default:
                 System.out.println("Invalid command");

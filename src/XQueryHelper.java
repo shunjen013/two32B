@@ -245,7 +245,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
 
     // Xq functions
     public List<Node> visitStrXQ(XQueryParser.StrXQContext ctx) {
-        //System.err.println("Enter Xq Str");
+//        System.out.println("Enter Xq Str " + ctx.getText());
         List<Node> ret = new ArrayList<>();
         ret.add(makeText(removeHeadTail(ctx.stringConstant().STRINGCONSTANT().getText())));
         currNodes = ret;
@@ -253,7 +253,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitSlashXQ(XQueryParser.SlashXQContext ctx) {
-        //System.err.println("Enter Xq Slash");
+//        System.out.println("Enter Xq Slash " + ctx.getText());
         visit(ctx.xq());
         visit(ctx.rp());
         currNodes = unique(currNodes);
@@ -261,7 +261,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitTagXQ(XQueryParser.TagXQContext ctx) {
-        //System.err.println("Enter Xq Tag");
+//        System.out.println("Enter Xq Tag " + ctx.getText());
         visit(ctx.xq());
         List<Node> ret = new ArrayList<>();
         ret.add(makeElem(ctx.tagName(0).STRING().getText(), currNodes));
@@ -270,7 +270,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitFlwrXQ(XQueryParser.FlwrXQContext ctx) {
-        //System.err.println("Enter Xq Flwr");
+//        System.out.println("Enter Xq Flwr " + ctx.getText());
         Map<String, Node> contextCopy = context;
         flwrXqCtx  = ctx;
         visit(ctx.forClause());
@@ -279,19 +279,19 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitApXQ(XQueryParser.ApXQContext ctx) {
-        //System.err.println("Enter Xq Ap");
+//        System.out.println("Enter Xq Ap " + ctx.getText());
         visit(ctx.ap());
         return currNodes;
     }
 
     public List<Node> visitParenXQ(XQueryParser.ParenXQContext ctx) {
-        //System.err.println("Enter Xq Paren");
+//        System.out.println("Enter Xq Paren " + ctx.getText());
         visit(ctx.xq());
         return currNodes;
     }
 
     public List<Node> visitLetXQ(XQueryParser.LetXQContext ctx) {
-        //System.err.println("Enter Xq Let");
+//        System.out.println("Enter Xq Let " + ctx.getText());
         Map<String, Node> contextCopy = context;
         visit(ctx.letClause());
         visit(ctx.xq());
@@ -300,7 +300,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitDslashXQ(XQueryParser.DslashXQContext ctx) {
-        //System.err.println("Enter Xq Dslash");
+//        System.out.println("Enter Xq Dslash " + ctx.getText());
         visit(ctx.xq());
         int idx = 0;
         while (idx < currNodes.size()) {
@@ -313,7 +313,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitCommaXQ(XQueryParser.CommaXQContext ctx) {
-        //System.err.println("Enter Xq Comma");
+//        System.out.println("Enter Xq Comma " + ctx.getText());
         List<Node> currNodesCopy = new ArrayList<>(currNodes);
         visit(ctx.xq(1));
         List<Node> prevResult = new ArrayList<>(currNodes);
@@ -324,17 +324,80 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitVarXQ(XQueryParser.VarXQContext ctx) {
-        //System.err.println("Enter Xq Var");
+//        System.out.println("Enter Xq Var " + ctx.getText());
         List<Node> ret = new ArrayList<>();
         ret.add(context.get(ctx.var().getText()));
         currNodes = ret;
         return currNodes;
     }
 
+    public List<Node> visitJoinXQ(XQueryParser.JoinXQContext ctx) {
+//        System.out.println("JoinXQ " + ctx.getText());
+        List<Node> result = new ArrayList<>();
+        List<Node> left = visit(ctx.xq(0));
+        Map<String, List<Node>> leftHashTable = buildHashTable(left, ctx);
+
+        int varSize = ctx.varList(0).STRING().size();
+        List<Node> right = visit(ctx.xq(1));
+        for(Node rightNode : right) {
+            List<Node> children = children(rightNode);
+            String key = "";
+            for(int i=0; i<varSize; i++) {
+                String str = ctx.varList(1).STRING(i).getText();
+                for (Node child : children) {
+                    if(str.equals(child.getNodeName()))
+                        key += child.getTextContent() + "++";
+                }
+            }
+            if(leftHashTable.containsKey(key)) {
+                result.addAll(product(leftHashTable.get(key), rightNode));
+            }
+        }
+        currNodes = result;
+        return result;
+    }
+
+    public List<Node> product(List<Node> leftNodes, Node rightNode) {
+        List<Node> result = new ArrayList<>();
+        for(Node leftNode : leftNodes) {
+            List<Node> newTuple = children(rightNode);
+            newTuple.addAll(children(leftNode));
+            result.add(makeElem("tuple", newTuple));
+        }
+        return result;
+    }
+
+    public Map<String, List<Node>> buildHashTable(List<Node> nodeList, XQueryParser.JoinXQContext ctx){
+        Map<String, List<Node>> table = new HashMap<>();
+        int varSize = ctx.varList(0).STRING().size();
+        for(Node node : nodeList){
+            String key = "";
+            List<Node> childrenNodes = children(node);
+            for(int i=0; i<varSize; i++) {
+                String str = ctx.varList(0).STRING(i).getText();
+                for(Node child : childrenNodes) {
+                    if(str.equals(child.getNodeName())) {
+                        key += child.getTextContent()+"++";
+                    }
+                }
+
+            }
+            if(table.containsKey(key)) {
+                table.get(key).add(node);
+            }
+            else {
+                List<Node> l = new ArrayList<>();
+                l.add(node);
+                table.put(key, l);
+            }
+        }
+        return table;
+    }
+
     //Cl functions
 
     public List<Node> visitForCl(XQueryParser.ForClContext ctx) {
-        //System.err.println("enter Cl For");
+//        System.out.println("enter Cl For " + ctx.getText());
         int varNum = ctx.var().size();
         List<Node> ret = new ArrayList<>();
         forClHelper(ctx, 0, varNum, ret);
@@ -389,7 +452,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     }
 
     public List<Node> visitRetCl(XQueryParser.RetClContext ctx) {
-        //System.err.println("Enter Cl Ret");
+//        System.out.println("Enter Cl Ret " + ctx.getText());
         visit(ctx.xq());
         return currNodes;
     }

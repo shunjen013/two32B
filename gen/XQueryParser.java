@@ -1,4 +1,4 @@
-// Generated from /home/shunjen013/232b/src/XQuery.g4 by ANTLR 4.7
+// Generated from /Users/weiwei/work/two32B/src/XQuery.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -1402,11 +1402,11 @@ public class XQueryParser extends Parser {
 						_localctx = new CommaXQContext(new XqContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_xq);
 						setState(177);
-						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
+						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
 						setState(178);
 						match(T__13);
 						setState(179);
-						xq(8);
+						xq(6);
 						}
 						break;
 					case 2:
@@ -1414,7 +1414,7 @@ public class XQueryParser extends Parser {
 						_localctx = new SlashXQContext(new XqContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_xq);
 						setState(180);
-						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
+						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
 						setState(181);
 						match(T__2);
 						setState(182);
@@ -1426,7 +1426,7 @@ public class XQueryParser extends Parser {
 						_localctx = new DslashXQContext(new XqContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_xq);
 						setState(183);
-						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
+						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
 						setState(184);
 						match(T__4);
 						setState(185);
@@ -2448,11 +2448,11 @@ public class XQueryParser extends Parser {
 	private boolean xq_sempred(XqContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 6:
-			return precpred(_ctx, 7);
-		case 7:
-			return precpred(_ctx, 6);
-		case 8:
 			return precpred(_ctx, 5);
+		case 7:
+			return precpred(_ctx, 7);
+		case 8:
+			return precpred(_ctx, 6);
 		}
 		return true;
 	}
@@ -2527,9 +2527,9 @@ public class XQueryParser extends Parser {
 		"\u00ae\u00af\7\17\2\2\u00af\u00b0\7\4\2\2\u00b0\u00b2\3\2\2\2\u00b1\u0080"+
 		"\3\2\2\2\u00b1\u0082\3\2\2\2\u00b1\u0083\3\2\2\2\u00b1\u0084\3\2\2\2\u00b1"+
 		"\u0088\3\2\2\2\u00b1\u0092\3\2\2\2\u00b1\u009b\3\2\2\2\u00b1\u009e\3\2"+
-		"\2\2\u00b2\u00be\3\2\2\2\u00b3\u00b4\f\t\2\2\u00b4\u00b5\7\20\2\2\u00b5"+
-		"\u00bd\5\b\5\n\u00b6\u00b7\f\b\2\2\u00b7\u00b8\7\5\2\2\u00b8\u00bd\5\4"+
-		"\3\2\u00b9\u00ba\f\7\2\2\u00ba\u00bb\7\7\2\2\u00bb\u00bd\5\4\3\2\u00bc"+
+		"\2\2\u00b2\u00be\3\2\2\2\u00b3\u00b4\f\7\2\2\u00b4\u00b5\7\20\2\2\u00b5"+
+		"\u00bd\5\b\5\b\u00b6\u00b7\f\t\2\2\u00b7\u00b8\7\5\2\2\u00b8\u00bd\5\4"+
+		"\3\2\u00b9\u00ba\f\b\2\2\u00ba\u00bb\7\7\2\2\u00bb\u00bd\5\4\3\2\u00bc"+
 		"\u00b3\3\2\2\2\u00bc\u00b6\3\2\2\2\u00bc\u00b9\3\2\2\2\u00bd\u00c0\3\2"+
 		"\2\2\u00be\u00bc\3\2\2\2\u00be\u00bf\3\2\2\2\u00bf\t\3\2\2\2\u00c0\u00be"+
 		"\3\2\2\2\u00c1\u00c2\7\36\2\2\u00c2\u00c3\5\34\17\2\u00c3\u00c4\7\37\2"+

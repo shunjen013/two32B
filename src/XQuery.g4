@@ -38,9 +38,9 @@ xq
   | stringConstant                                  #strXQ
   | ap                                              #apXQ
   | '(' xq ')'                                      #parenXQ
-  | xq ',' xq                                       #commaXQ
   | xq '/' rp                                       #slashXQ
   | xq '//' rp                                      #dslashXQ
+  | xq ',' xq                                       #commaXQ
   | '<' tagName '>' '{' xq '}' '</' tagName '>'     #tagXQ      // back reference?
   | forClause letClause? whereClause? returnClause  #flwrXQ
   | letClause xq                                    #letXQ
@@ -89,7 +89,7 @@ stringConstant  : STRINGCONSTANT;
 
 //SENTENCE: CHARANDSPACE+;
 STRING: CHAR+;
-CHAR: ('a'..'z' | 'A'..'Z' | '0'..'9' | '_' | '.');
+CHAR: ('a'..'z' | 'A'..'Z' | '0'..'9' | '_' | '.' | '-');
 //DQUOTE: '"';
 STRINGCONSTANT: '"' ~'"'* '"';
 //CHARANDSPACE: ('a'..'z' | 'A'..'Z' | '0'..'9' | '_' | '.' | ' ');

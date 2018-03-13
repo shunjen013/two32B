@@ -1,4 +1,4 @@
-// Generated from /home/shunjen013/232b/src/XQuery.g4 by ANTLR 4.7
+// Generated from /Users/weiwei/work/two32B/src/XQuery.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
