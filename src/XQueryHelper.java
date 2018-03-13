@@ -335,7 +335,7 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
 
     public List<Node> visitForCl(XQueryParser.ForClContext ctx) {
         //System.err.println("enter Cl For");
-        int varNum = ctx.getChildCount() / 4;
+        int varNum = ctx.var().size();
         List<Node> ret = new ArrayList<>();
         forClHelper(ctx, 0, varNum, ret);
         currNodes = ret;

@@ -1,349 +1,349 @@
-// Generated from /home/shunjen013/232b/src/XQuery.g4 by ANTLR 4.7
+// Generated from /home/shunjen013/232b/src/Rewrite.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
  * This interface defines a complete generic visitor for a parse tree produced
- * by {@link XQueryParser}.
+ * by {@link RewriteParser}.
  *
  * @param <T> The return type of the visit operation. Use {@link Void} for
  * operations with no return type.
  */
-public interface XQueryVisitor<T> extends ParseTreeVisitor<T> {
+public interface RewriteVisitor<T> extends ParseTreeVisitor<T> {
 	/**
 	 * Visit a parse tree produced by the {@code slash}
-	 * labeled alternative in {@link XQueryParser#ap}.
+	 * labeled alternative in {@link RewriteParser#ap}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSlash(XQueryParser.SlashContext ctx);
+	T visitSlash(RewriteParser.SlashContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code dSlash}
-	 * labeled alternative in {@link XQueryParser#ap}.
+	 * labeled alternative in {@link RewriteParser#ap}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDSlash(XQueryParser.DSlashContext ctx);
+	T visitDSlash(RewriteParser.DSlashContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code paren}
-	 * labeled alternative in {@link XQueryParser#rp}.
+	 * labeled alternative in {@link RewriteParser#rp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParen(XQueryParser.ParenContext ctx);
+	T visitParen(RewriteParser.ParenContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code star}
-	 * labeled alternative in {@link XQueryParser#rp}.
+	 * labeled alternative in {@link RewriteParser#rp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStar(XQueryParser.StarContext ctx);
+	T visitStar(RewriteParser.StarContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code filterRP}
-	 * labeled alternative in {@link XQueryParser#rp}.
+	 * labeled alternative in {@link RewriteParser#rp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFilterRP(XQueryParser.FilterRPContext ctx);
+	T visitFilterRP(RewriteParser.FilterRPContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code commaRP}
-	 * labeled alternative in {@link XQueryParser#rp}.
+	 * labeled alternative in {@link RewriteParser#rp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCommaRP(XQueryParser.CommaRPContext ctx);
+	T visitCommaRP(RewriteParser.CommaRPContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code dot}
-	 * labeled alternative in {@link XQueryParser#rp}.
+	 * labeled alternative in {@link RewriteParser#rp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDot(XQueryParser.DotContext ctx);
+	T visitDot(RewriteParser.DotContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code tag}
-	 * labeled alternative in {@link XQueryParser#rp}.
+	 * labeled alternative in {@link RewriteParser#rp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTag(XQueryParser.TagContext ctx);
+	T visitTag(RewriteParser.TagContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code ddot}
-	 * labeled alternative in {@link XQueryParser#rp}.
+	 * labeled alternative in {@link RewriteParser#rp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDdot(XQueryParser.DdotContext ctx);
+	T visitDdot(RewriteParser.DdotContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code text}
-	 * labeled alternative in {@link XQueryParser#rp}.
+	 * labeled alternative in {@link RewriteParser#rp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitText(XQueryParser.TextContext ctx);
+	T visitText(RewriteParser.TextContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code attribute}
-	 * labeled alternative in {@link XQueryParser#rp}.
+	 * labeled alternative in {@link RewriteParser#rp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAttribute(XQueryParser.AttributeContext ctx);
+	T visitAttribute(RewriteParser.AttributeContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code dslashRP}
-	 * labeled alternative in {@link XQueryParser#rp}.
+	 * labeled alternative in {@link RewriteParser#rp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDslashRP(XQueryParser.DslashRPContext ctx);
+	T visitDslashRP(RewriteParser.DslashRPContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code slashRP}
-	 * labeled alternative in {@link XQueryParser#rp}.
+	 * labeled alternative in {@link RewriteParser#rp}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSlashRP(XQueryParser.SlashRPContext ctx);
+	T visitSlashRP(RewriteParser.SlashRPContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code eqFilter}
-	 * labeled alternative in {@link XQueryParser#filter}.
+	 * labeled alternative in {@link RewriteParser#filter}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitEqFilter(XQueryParser.EqFilterContext ctx);
+	T visitEqFilter(RewriteParser.EqFilterContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code notFilter}
-	 * labeled alternative in {@link XQueryParser#filter}.
+	 * labeled alternative in {@link RewriteParser#filter}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNotFilter(XQueryParser.NotFilterContext ctx);
+	T visitNotFilter(RewriteParser.NotFilterContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code andFilter}
-	 * labeled alternative in {@link XQueryParser#filter}.
+	 * labeled alternative in {@link RewriteParser#filter}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAndFilter(XQueryParser.AndFilterContext ctx);
+	T visitAndFilter(RewriteParser.AndFilterContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code isFilter}
-	 * labeled alternative in {@link XQueryParser#filter}.
+	 * labeled alternative in {@link RewriteParser#filter}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIsFilter(XQueryParser.IsFilterContext ctx);
+	T visitIsFilter(RewriteParser.IsFilterContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code rpFilter}
-	 * labeled alternative in {@link XQueryParser#filter}.
+	 * labeled alternative in {@link RewriteParser#filter}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitRpFilter(XQueryParser.RpFilterContext ctx);
+	T visitRpFilter(RewriteParser.RpFilterContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code orFilter}
-	 * labeled alternative in {@link XQueryParser#filter}.
+	 * labeled alternative in {@link RewriteParser#filter}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitOrFilter(XQueryParser.OrFilterContext ctx);
+	T visitOrFilter(RewriteParser.OrFilterContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code parenFilter}
-	 * labeled alternative in {@link XQueryParser#filter}.
+	 * labeled alternative in {@link RewriteParser#filter}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParenFilter(XQueryParser.ParenFilterContext ctx);
+	T visitParenFilter(RewriteParser.ParenFilterContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code strXQ}
-	 * labeled alternative in {@link XQueryParser#xq}.
+	 * labeled alternative in {@link RewriteParser#xq}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStrXQ(XQueryParser.StrXQContext ctx);
+	T visitStrXQ(RewriteParser.StrXQContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code flwrXQ}
-	 * labeled alternative in {@link XQueryParser#xq}.
+	 * labeled alternative in {@link RewriteParser#xq}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFlwrXQ(XQueryParser.FlwrXQContext ctx);
+	T visitFlwrXQ(RewriteParser.FlwrXQContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code slashXQ}
-	 * labeled alternative in {@link XQueryParser#xq}.
+	 * labeled alternative in {@link RewriteParser#xq}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSlashXQ(XQueryParser.SlashXQContext ctx);
+	T visitSlashXQ(RewriteParser.SlashXQContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code tagXQ}
-	 * labeled alternative in {@link XQueryParser#xq}.
+	 * labeled alternative in {@link RewriteParser#xq}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTagXQ(XQueryParser.TagXQContext ctx);
+	T visitTagXQ(RewriteParser.TagXQContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code apXQ}
-	 * labeled alternative in {@link XQueryParser#xq}.
+	 * labeled alternative in {@link RewriteParser#xq}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitApXQ(XQueryParser.ApXQContext ctx);
+	T visitApXQ(RewriteParser.ApXQContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code parenXQ}
-	 * labeled alternative in {@link XQueryParser#xq}.
+	 * labeled alternative in {@link RewriteParser#xq}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParenXQ(XQueryParser.ParenXQContext ctx);
+	T visitParenXQ(RewriteParser.ParenXQContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code letXQ}
-	 * labeled alternative in {@link XQueryParser#xq}.
+	 * labeled alternative in {@link RewriteParser#xq}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitLetXQ(XQueryParser.LetXQContext ctx);
+	T visitLetXQ(RewriteParser.LetXQContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code dslashXQ}
-	 * labeled alternative in {@link XQueryParser#xq}.
+	 * labeled alternative in {@link RewriteParser#xq}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDslashXQ(XQueryParser.DslashXQContext ctx);
+	T visitDslashXQ(RewriteParser.DslashXQContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code commaXQ}
-	 * labeled alternative in {@link XQueryParser#xq}.
+	 * labeled alternative in {@link RewriteParser#xq}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCommaXQ(XQueryParser.CommaXQContext ctx);
+	T visitCommaXQ(RewriteParser.CommaXQContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code varXQ}
-	 * labeled alternative in {@link XQueryParser#xq}.
+	 * labeled alternative in {@link RewriteParser#xq}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVarXQ(XQueryParser.VarXQContext ctx);
+	T visitVarXQ(RewriteParser.VarXQContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code joinXQ}
-	 * labeled alternative in {@link XQueryParser#xq}.
+	 * labeled alternative in {@link RewriteParser#xq}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitJoinXQ(XQueryParser.JoinXQContext ctx);
+	T visitJoinXQ(RewriteParser.JoinXQContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code forCl}
-	 * labeled alternative in {@link XQueryParser#forClause}.
+	 * labeled alternative in {@link RewriteParser#forClause}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitForCl(XQueryParser.ForClContext ctx);
+	T visitForCl(RewriteParser.ForClContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code letCl}
-	 * labeled alternative in {@link XQueryParser#letClause}.
+	 * labeled alternative in {@link RewriteParser#letClause}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitLetCl(XQueryParser.LetClContext ctx);
+	T visitLetCl(RewriteParser.LetClContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code whereCl}
-	 * labeled alternative in {@link XQueryParser#whereClause}.
+	 * labeled alternative in {@link RewriteParser#whereClause}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitWhereCl(XQueryParser.WhereClContext ctx);
+	T visitWhereCl(RewriteParser.WhereClContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code retCl}
-	 * labeled alternative in {@link XQueryParser#returnClause}.
+	 * labeled alternative in {@link RewriteParser#returnClause}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitRetCl(XQueryParser.RetClContext ctx);
+	T visitRetCl(RewriteParser.RetClContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code orCond}
-	 * labeled alternative in {@link XQueryParser#cond}.
+	 * labeled alternative in {@link RewriteParser#cond}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitOrCond(XQueryParser.OrCondContext ctx);
+	T visitOrCond(RewriteParser.OrCondContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code empCond}
-	 * labeled alternative in {@link XQueryParser#cond}.
+	 * labeled alternative in {@link RewriteParser#cond}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitEmpCond(XQueryParser.EmpCondContext ctx);
+	T visitEmpCond(RewriteParser.EmpCondContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code andCond}
-	 * labeled alternative in {@link XQueryParser#cond}.
+	 * labeled alternative in {@link RewriteParser#cond}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAndCond(XQueryParser.AndCondContext ctx);
+	T visitAndCond(RewriteParser.AndCondContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code someCond}
-	 * labeled alternative in {@link XQueryParser#cond}.
+	 * labeled alternative in {@link RewriteParser#cond}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSomeCond(XQueryParser.SomeCondContext ctx);
+	T visitSomeCond(RewriteParser.SomeCondContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code parenCond}
-	 * labeled alternative in {@link XQueryParser#cond}.
+	 * labeled alternative in {@link RewriteParser#cond}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParenCond(XQueryParser.ParenCondContext ctx);
+	T visitParenCond(RewriteParser.ParenCondContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code isCond}
-	 * labeled alternative in {@link XQueryParser#cond}.
+	 * labeled alternative in {@link RewriteParser#cond}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIsCond(XQueryParser.IsCondContext ctx);
+	T visitIsCond(RewriteParser.IsCondContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code eqCond}
-	 * labeled alternative in {@link XQueryParser#cond}.
+	 * labeled alternative in {@link RewriteParser#cond}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitEqCond(XQueryParser.EqCondContext ctx);
+	T visitEqCond(RewriteParser.EqCondContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code notCond}
-	 * labeled alternative in {@link XQueryParser#cond}.
+	 * labeled alternative in {@link RewriteParser#cond}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNotCond(XQueryParser.NotCondContext ctx);
+	T visitNotCond(RewriteParser.NotCondContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link XQueryParser#varList}.
+	 * Visit a parse tree produced by {@link RewriteParser#varList}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVarList(XQueryParser.VarListContext ctx);
+	T visitVarList(RewriteParser.VarListContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link XQueryParser#fileName}.
+	 * Visit a parse tree produced by {@link RewriteParser#fileName}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFileName(XQueryParser.FileNameContext ctx);
+	T visitFileName(RewriteParser.FileNameContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link XQueryParser#tagName}.
+	 * Visit a parse tree produced by {@link RewriteParser#tagName}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTagName(XQueryParser.TagNameContext ctx);
+	T visitTagName(RewriteParser.TagNameContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link XQueryParser#attName}.
+	 * Visit a parse tree produced by {@link RewriteParser#attName}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAttName(XQueryParser.AttNameContext ctx);
+	T visitAttName(RewriteParser.AttNameContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link XQueryParser#var}.
+	 * Visit a parse tree produced by {@link RewriteParser#var}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVar(XQueryParser.VarContext ctx);
+	T visitVar(RewriteParser.VarContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link XQueryParser#stringConstant}.
+	 * Visit a parse tree produced by {@link RewriteParser#stringConstant}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStringConstant(XQueryParser.StringConstantContext ctx);
+	T visitStringConstant(RewriteParser.StringConstantContext ctx);
 }

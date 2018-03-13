@@ -367,6 +367,18 @@ public interface XQueryListener extends ParseTreeListener {
 	 */
 	void exitVarXQ(XQueryParser.VarXQContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code joinXQ}
+	 * labeled alternative in {@link XQueryParser#xq}.
+	 * @param ctx the parse tree
+	 */
+	void enterJoinXQ(XQueryParser.JoinXQContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code joinXQ}
+	 * labeled alternative in {@link XQueryParser#xq}.
+	 * @param ctx the parse tree
+	 */
+	void exitJoinXQ(XQueryParser.JoinXQContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code forCl}
 	 * labeled alternative in {@link XQueryParser#forClause}.
 	 * @param ctx the parse tree
@@ -510,6 +522,16 @@ public interface XQueryListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNotCond(XQueryParser.NotCondContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link XQueryParser#varList}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarList(XQueryParser.VarListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link XQueryParser#varList}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarList(XQueryParser.VarListContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link XQueryParser#fileName}.
 	 * @param ctx the parse tree

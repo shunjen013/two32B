@@ -1,4 +1,4 @@
-// Generated from /home/shunjen013/232b/src/XQuery.g4 by ANTLR 4.7
+// Generated from /home/shunjen013/232b/src/Rewrite.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class XQueryParser extends Parser {
+public class RewriteParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -79,7 +79,7 @@ public class XQueryParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "XQuery.g4"; }
+	public String getGrammarFileName() { return "Rewrite.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -90,7 +90,7 @@ public class XQueryParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public XQueryParser(TokenStream input) {
+	public RewriteParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -115,15 +115,15 @@ public class XQueryParser extends Parser {
 		public DSlashContext(ApContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterDSlash(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterDSlash(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitDSlash(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitDSlash(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitDSlash(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitDSlash(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -137,15 +137,15 @@ public class XQueryParser extends Parser {
 		public SlashContext(ApContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterSlash(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterSlash(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitSlash(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitSlash(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitSlash(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitSlash(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -252,15 +252,15 @@ public class XQueryParser extends Parser {
 		public ParenContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterParen(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterParen(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitParen(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitParen(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitParen(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitParen(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -268,15 +268,15 @@ public class XQueryParser extends Parser {
 		public StarContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterStar(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterStar(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitStar(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitStar(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitStar(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitStar(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -290,15 +290,15 @@ public class XQueryParser extends Parser {
 		public FilterRPContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterFilterRP(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterFilterRP(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitFilterRP(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitFilterRP(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitFilterRP(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitFilterRP(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -312,15 +312,15 @@ public class XQueryParser extends Parser {
 		public CommaRPContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterCommaRP(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterCommaRP(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitCommaRP(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitCommaRP(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitCommaRP(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitCommaRP(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -328,15 +328,15 @@ public class XQueryParser extends Parser {
 		public DotContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterDot(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterDot(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitDot(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitDot(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitDot(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitDot(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -347,15 +347,15 @@ public class XQueryParser extends Parser {
 		public TagContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterTag(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterTag(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitTag(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitTag(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitTag(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitTag(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -363,15 +363,15 @@ public class XQueryParser extends Parser {
 		public DdotContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterDdot(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterDdot(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitDdot(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitDdot(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitDdot(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitDdot(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -379,15 +379,15 @@ public class XQueryParser extends Parser {
 		public TextContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterText(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterText(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitText(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitText(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitText(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitText(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -398,15 +398,15 @@ public class XQueryParser extends Parser {
 		public AttributeContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterAttribute(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterAttribute(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitAttribute(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitAttribute(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitAttribute(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitAttribute(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -420,15 +420,15 @@ public class XQueryParser extends Parser {
 		public DslashRPContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterDslashRP(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterDslashRP(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitDslashRP(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitDslashRP(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitDslashRP(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitDslashRP(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -442,15 +442,15 @@ public class XQueryParser extends Parser {
 		public SlashRPContext(RpContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterSlashRP(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterSlashRP(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitSlashRP(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitSlashRP(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitSlashRP(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitSlashRP(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -649,15 +649,15 @@ public class XQueryParser extends Parser {
 		public EqFilterContext(FilterContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterEqFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterEqFilter(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitEqFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitEqFilter(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitEqFilter(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitEqFilter(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -668,15 +668,15 @@ public class XQueryParser extends Parser {
 		public NotFilterContext(FilterContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterNotFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterNotFilter(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitNotFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitNotFilter(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitNotFilter(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitNotFilter(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -690,15 +690,15 @@ public class XQueryParser extends Parser {
 		public AndFilterContext(FilterContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterAndFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterAndFilter(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitAndFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitAndFilter(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitAndFilter(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitAndFilter(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -712,15 +712,15 @@ public class XQueryParser extends Parser {
 		public IsFilterContext(FilterContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterIsFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterIsFilter(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitIsFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitIsFilter(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitIsFilter(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitIsFilter(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -731,15 +731,15 @@ public class XQueryParser extends Parser {
 		public RpFilterContext(FilterContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterRpFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterRpFilter(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitRpFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitRpFilter(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitRpFilter(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitRpFilter(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -753,15 +753,15 @@ public class XQueryParser extends Parser {
 		public OrFilterContext(FilterContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterOrFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterOrFilter(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitOrFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitOrFilter(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitOrFilter(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitOrFilter(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -772,15 +772,15 @@ public class XQueryParser extends Parser {
 		public ParenFilterContext(FilterContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterParenFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterParenFilter(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitParenFilter(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitParenFilter(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitParenFilter(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitParenFilter(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -964,15 +964,15 @@ public class XQueryParser extends Parser {
 		public StrXQContext(XqContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterStrXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterStrXQ(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitStrXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitStrXQ(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitStrXQ(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitStrXQ(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -992,15 +992,15 @@ public class XQueryParser extends Parser {
 		public FlwrXQContext(XqContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterFlwrXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterFlwrXQ(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitFlwrXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitFlwrXQ(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitFlwrXQ(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitFlwrXQ(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1014,15 +1014,15 @@ public class XQueryParser extends Parser {
 		public SlashXQContext(XqContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterSlashXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterSlashXQ(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitSlashXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitSlashXQ(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitSlashXQ(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitSlashXQ(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1039,15 +1039,15 @@ public class XQueryParser extends Parser {
 		public TagXQContext(XqContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterTagXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterTagXQ(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitTagXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitTagXQ(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitTagXQ(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitTagXQ(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1058,15 +1058,15 @@ public class XQueryParser extends Parser {
 		public ApXQContext(XqContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterApXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterApXQ(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitApXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitApXQ(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitApXQ(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitApXQ(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1077,15 +1077,15 @@ public class XQueryParser extends Parser {
 		public ParenXQContext(XqContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterParenXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterParenXQ(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitParenXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitParenXQ(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitParenXQ(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitParenXQ(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1099,15 +1099,15 @@ public class XQueryParser extends Parser {
 		public LetXQContext(XqContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterLetXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterLetXQ(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitLetXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitLetXQ(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitLetXQ(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitLetXQ(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1121,15 +1121,15 @@ public class XQueryParser extends Parser {
 		public DslashXQContext(XqContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterDslashXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterDslashXQ(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitDslashXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitDslashXQ(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitDslashXQ(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitDslashXQ(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1143,15 +1143,15 @@ public class XQueryParser extends Parser {
 		public CommaXQContext(XqContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterCommaXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterCommaXQ(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitCommaXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitCommaXQ(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitCommaXQ(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitCommaXQ(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1162,15 +1162,15 @@ public class XQueryParser extends Parser {
 		public VarXQContext(XqContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterVarXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterVarXQ(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitVarXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitVarXQ(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitVarXQ(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitVarXQ(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1190,15 +1190,15 @@ public class XQueryParser extends Parser {
 		public JoinXQContext(XqContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterJoinXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterJoinXQ(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitJoinXQ(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitJoinXQ(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitJoinXQ(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitJoinXQ(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1480,15 +1480,15 @@ public class XQueryParser extends Parser {
 		public ForClContext(ForClauseContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterForCl(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterForCl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitForCl(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitForCl(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitForCl(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitForCl(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1569,15 +1569,15 @@ public class XQueryParser extends Parser {
 		public LetClContext(LetClauseContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterLetCl(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterLetCl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitLetCl(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitLetCl(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitLetCl(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitLetCl(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1649,15 +1649,15 @@ public class XQueryParser extends Parser {
 		public WhereClContext(WhereClauseContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterWhereCl(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterWhereCl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitWhereCl(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitWhereCl(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitWhereCl(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitWhereCl(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1704,15 +1704,15 @@ public class XQueryParser extends Parser {
 		public RetClContext(ReturnClauseContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterRetCl(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterRetCl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitRetCl(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitRetCl(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitRetCl(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitRetCl(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1762,15 +1762,15 @@ public class XQueryParser extends Parser {
 		public OrCondContext(CondContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterOrCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterOrCond(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitOrCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitOrCond(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitOrCond(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitOrCond(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1781,15 +1781,15 @@ public class XQueryParser extends Parser {
 		public EmpCondContext(CondContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterEmpCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterEmpCond(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitEmpCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitEmpCond(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitEmpCond(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitEmpCond(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1803,15 +1803,15 @@ public class XQueryParser extends Parser {
 		public AndCondContext(CondContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterAndCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterAndCond(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitAndCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitAndCond(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitAndCond(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitAndCond(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1834,15 +1834,15 @@ public class XQueryParser extends Parser {
 		public SomeCondContext(CondContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterSomeCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterSomeCond(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitSomeCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitSomeCond(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitSomeCond(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitSomeCond(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1853,15 +1853,15 @@ public class XQueryParser extends Parser {
 		public ParenCondContext(CondContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterParenCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterParenCond(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitParenCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitParenCond(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitParenCond(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitParenCond(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1875,15 +1875,15 @@ public class XQueryParser extends Parser {
 		public IsCondContext(CondContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterIsCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterIsCond(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitIsCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitIsCond(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitIsCond(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitIsCond(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1897,15 +1897,15 @@ public class XQueryParser extends Parser {
 		public EqCondContext(CondContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterEqCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterEqCond(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitEqCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitEqCond(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitEqCond(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitEqCond(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1916,15 +1916,15 @@ public class XQueryParser extends Parser {
 		public NotCondContext(CondContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterNotCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterNotCond(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitNotCond(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitNotCond(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitNotCond(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitNotCond(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2137,9 +2137,9 @@ public class XQueryParser extends Parser {
 	}
 
 	public static class VarListContext extends ParserRuleContext {
-		public List<TerminalNode> STRING() { return getTokens(XQueryParser.STRING); }
+		public List<TerminalNode> STRING() { return getTokens(RewriteParser.STRING); }
 		public TerminalNode STRING(int i) {
-			return getToken(XQueryParser.STRING, i);
+			return getToken(RewriteParser.STRING, i);
 		}
 		public VarListContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2147,15 +2147,15 @@ public class XQueryParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_varList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterVarList(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterVarList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitVarList(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitVarList(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitVarList(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitVarList(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2199,22 +2199,22 @@ public class XQueryParser extends Parser {
 	}
 
 	public static class FileNameContext extends ParserRuleContext {
-		public TerminalNode STRINGCONSTANT() { return getToken(XQueryParser.STRINGCONSTANT, 0); }
+		public TerminalNode STRINGCONSTANT() { return getToken(RewriteParser.STRINGCONSTANT, 0); }
 		public FileNameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_fileName; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterFileName(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterFileName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitFileName(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitFileName(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitFileName(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitFileName(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2241,22 +2241,22 @@ public class XQueryParser extends Parser {
 	}
 
 	public static class TagNameContext extends ParserRuleContext {
-		public TerminalNode STRING() { return getToken(XQueryParser.STRING, 0); }
+		public TerminalNode STRING() { return getToken(RewriteParser.STRING, 0); }
 		public TagNameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_tagName; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterTagName(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterTagName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitTagName(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitTagName(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitTagName(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitTagName(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2283,22 +2283,22 @@ public class XQueryParser extends Parser {
 	}
 
 	public static class AttNameContext extends ParserRuleContext {
-		public TerminalNode STRING() { return getToken(XQueryParser.STRING, 0); }
+		public TerminalNode STRING() { return getToken(RewriteParser.STRING, 0); }
 		public AttNameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_attName; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterAttName(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterAttName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitAttName(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitAttName(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitAttName(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitAttName(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2325,22 +2325,22 @@ public class XQueryParser extends Parser {
 	}
 
 	public static class VarContext extends ParserRuleContext {
-		public TerminalNode STRING() { return getToken(XQueryParser.STRING, 0); }
+		public TerminalNode STRING() { return getToken(RewriteParser.STRING, 0); }
 		public VarContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_var; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterVar(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterVar(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitVar(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitVar(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitVar(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitVar(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2369,22 +2369,22 @@ public class XQueryParser extends Parser {
 	}
 
 	public static class StringConstantContext extends ParserRuleContext {
-		public TerminalNode STRINGCONSTANT() { return getToken(XQueryParser.STRINGCONSTANT, 0); }
+		public TerminalNode STRINGCONSTANT() { return getToken(RewriteParser.STRINGCONSTANT, 0); }
 		public StringConstantContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_stringConstant; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).enterStringConstant(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).enterStringConstant(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof XQueryListener ) ((XQueryListener)listener).exitStringConstant(this);
+			if ( listener instanceof RewriteListener ) ((RewriteListener)listener).exitStringConstant(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof XQueryVisitor ) return ((XQueryVisitor<? extends T>)visitor).visitStringConstant(this);
+			if ( visitor instanceof RewriteVisitor ) return ((RewriteVisitor<? extends T>)visitor).visitStringConstant(this);
 			else return visitor.visitChildren(this);
 		}
 	}

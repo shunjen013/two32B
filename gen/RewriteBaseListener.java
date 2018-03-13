@@ -1,603 +1,603 @@
-// Generated from /home/shunjen013/232b/src/XQuery.g4 by ANTLR 4.7
+// Generated from /home/shunjen013/232b/src/Rewrite.g4 by ANTLR 4.7
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link XQueryListener},
+ * This class provides an empty implementation of {@link RewriteListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-public class XQueryBaseListener implements XQueryListener {
+public class RewriteBaseListener implements RewriteListener {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSlash(XQueryParser.SlashContext ctx) { }
+	@Override public void enterSlash(RewriteParser.SlashContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSlash(XQueryParser.SlashContext ctx) { }
+	@Override public void exitSlash(RewriteParser.SlashContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDSlash(XQueryParser.DSlashContext ctx) { }
+	@Override public void enterDSlash(RewriteParser.DSlashContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDSlash(XQueryParser.DSlashContext ctx) { }
+	@Override public void exitDSlash(RewriteParser.DSlashContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParen(XQueryParser.ParenContext ctx) { }
+	@Override public void enterParen(RewriteParser.ParenContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParen(XQueryParser.ParenContext ctx) { }
+	@Override public void exitParen(RewriteParser.ParenContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStar(XQueryParser.StarContext ctx) { }
+	@Override public void enterStar(RewriteParser.StarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStar(XQueryParser.StarContext ctx) { }
+	@Override public void exitStar(RewriteParser.StarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFilterRP(XQueryParser.FilterRPContext ctx) { }
+	@Override public void enterFilterRP(RewriteParser.FilterRPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFilterRP(XQueryParser.FilterRPContext ctx) { }
+	@Override public void exitFilterRP(RewriteParser.FilterRPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCommaRP(XQueryParser.CommaRPContext ctx) { }
+	@Override public void enterCommaRP(RewriteParser.CommaRPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCommaRP(XQueryParser.CommaRPContext ctx) { }
+	@Override public void exitCommaRP(RewriteParser.CommaRPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDot(XQueryParser.DotContext ctx) { }
+	@Override public void enterDot(RewriteParser.DotContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDot(XQueryParser.DotContext ctx) { }
+	@Override public void exitDot(RewriteParser.DotContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTag(XQueryParser.TagContext ctx) { }
+	@Override public void enterTag(RewriteParser.TagContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTag(XQueryParser.TagContext ctx) { }
+	@Override public void exitTag(RewriteParser.TagContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDdot(XQueryParser.DdotContext ctx) { }
+	@Override public void enterDdot(RewriteParser.DdotContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDdot(XQueryParser.DdotContext ctx) { }
+	@Override public void exitDdot(RewriteParser.DdotContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterText(XQueryParser.TextContext ctx) { }
+	@Override public void enterText(RewriteParser.TextContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitText(XQueryParser.TextContext ctx) { }
+	@Override public void exitText(RewriteParser.TextContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAttribute(XQueryParser.AttributeContext ctx) { }
+	@Override public void enterAttribute(RewriteParser.AttributeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAttribute(XQueryParser.AttributeContext ctx) { }
+	@Override public void exitAttribute(RewriteParser.AttributeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDslashRP(XQueryParser.DslashRPContext ctx) { }
+	@Override public void enterDslashRP(RewriteParser.DslashRPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDslashRP(XQueryParser.DslashRPContext ctx) { }
+	@Override public void exitDslashRP(RewriteParser.DslashRPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSlashRP(XQueryParser.SlashRPContext ctx) { }
+	@Override public void enterSlashRP(RewriteParser.SlashRPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSlashRP(XQueryParser.SlashRPContext ctx) { }
+	@Override public void exitSlashRP(RewriteParser.SlashRPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEqFilter(XQueryParser.EqFilterContext ctx) { }
+	@Override public void enterEqFilter(RewriteParser.EqFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEqFilter(XQueryParser.EqFilterContext ctx) { }
+	@Override public void exitEqFilter(RewriteParser.EqFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNotFilter(XQueryParser.NotFilterContext ctx) { }
+	@Override public void enterNotFilter(RewriteParser.NotFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNotFilter(XQueryParser.NotFilterContext ctx) { }
+	@Override public void exitNotFilter(RewriteParser.NotFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAndFilter(XQueryParser.AndFilterContext ctx) { }
+	@Override public void enterAndFilter(RewriteParser.AndFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAndFilter(XQueryParser.AndFilterContext ctx) { }
+	@Override public void exitAndFilter(RewriteParser.AndFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIsFilter(XQueryParser.IsFilterContext ctx) { }
+	@Override public void enterIsFilter(RewriteParser.IsFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIsFilter(XQueryParser.IsFilterContext ctx) { }
+	@Override public void exitIsFilter(RewriteParser.IsFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRpFilter(XQueryParser.RpFilterContext ctx) { }
+	@Override public void enterRpFilter(RewriteParser.RpFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRpFilter(XQueryParser.RpFilterContext ctx) { }
+	@Override public void exitRpFilter(RewriteParser.RpFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOrFilter(XQueryParser.OrFilterContext ctx) { }
+	@Override public void enterOrFilter(RewriteParser.OrFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOrFilter(XQueryParser.OrFilterContext ctx) { }
+	@Override public void exitOrFilter(RewriteParser.OrFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParenFilter(XQueryParser.ParenFilterContext ctx) { }
+	@Override public void enterParenFilter(RewriteParser.ParenFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParenFilter(XQueryParser.ParenFilterContext ctx) { }
+	@Override public void exitParenFilter(RewriteParser.ParenFilterContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStrXQ(XQueryParser.StrXQContext ctx) { }
+	@Override public void enterStrXQ(RewriteParser.StrXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStrXQ(XQueryParser.StrXQContext ctx) { }
+	@Override public void exitStrXQ(RewriteParser.StrXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFlwrXQ(XQueryParser.FlwrXQContext ctx) { }
+	@Override public void enterFlwrXQ(RewriteParser.FlwrXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFlwrXQ(XQueryParser.FlwrXQContext ctx) { }
+	@Override public void exitFlwrXQ(RewriteParser.FlwrXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSlashXQ(XQueryParser.SlashXQContext ctx) { }
+	@Override public void enterSlashXQ(RewriteParser.SlashXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSlashXQ(XQueryParser.SlashXQContext ctx) { }
+	@Override public void exitSlashXQ(RewriteParser.SlashXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTagXQ(XQueryParser.TagXQContext ctx) { }
+	@Override public void enterTagXQ(RewriteParser.TagXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTagXQ(XQueryParser.TagXQContext ctx) { }
+	@Override public void exitTagXQ(RewriteParser.TagXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterApXQ(XQueryParser.ApXQContext ctx) { }
+	@Override public void enterApXQ(RewriteParser.ApXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitApXQ(XQueryParser.ApXQContext ctx) { }
+	@Override public void exitApXQ(RewriteParser.ApXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParenXQ(XQueryParser.ParenXQContext ctx) { }
+	@Override public void enterParenXQ(RewriteParser.ParenXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParenXQ(XQueryParser.ParenXQContext ctx) { }
+	@Override public void exitParenXQ(RewriteParser.ParenXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLetXQ(XQueryParser.LetXQContext ctx) { }
+	@Override public void enterLetXQ(RewriteParser.LetXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLetXQ(XQueryParser.LetXQContext ctx) { }
+	@Override public void exitLetXQ(RewriteParser.LetXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDslashXQ(XQueryParser.DslashXQContext ctx) { }
+	@Override public void enterDslashXQ(RewriteParser.DslashXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDslashXQ(XQueryParser.DslashXQContext ctx) { }
+	@Override public void exitDslashXQ(RewriteParser.DslashXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCommaXQ(XQueryParser.CommaXQContext ctx) { }
+	@Override public void enterCommaXQ(RewriteParser.CommaXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCommaXQ(XQueryParser.CommaXQContext ctx) { }
+	@Override public void exitCommaXQ(RewriteParser.CommaXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVarXQ(XQueryParser.VarXQContext ctx) { }
+	@Override public void enterVarXQ(RewriteParser.VarXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVarXQ(XQueryParser.VarXQContext ctx) { }
+	@Override public void exitVarXQ(RewriteParser.VarXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterJoinXQ(XQueryParser.JoinXQContext ctx) { }
+	@Override public void enterJoinXQ(RewriteParser.JoinXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitJoinXQ(XQueryParser.JoinXQContext ctx) { }
+	@Override public void exitJoinXQ(RewriteParser.JoinXQContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterForCl(XQueryParser.ForClContext ctx) { }
+	@Override public void enterForCl(RewriteParser.ForClContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitForCl(XQueryParser.ForClContext ctx) { }
+	@Override public void exitForCl(RewriteParser.ForClContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLetCl(XQueryParser.LetClContext ctx) { }
+	@Override public void enterLetCl(RewriteParser.LetClContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLetCl(XQueryParser.LetClContext ctx) { }
+	@Override public void exitLetCl(RewriteParser.LetClContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhereCl(XQueryParser.WhereClContext ctx) { }
+	@Override public void enterWhereCl(RewriteParser.WhereClContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhereCl(XQueryParser.WhereClContext ctx) { }
+	@Override public void exitWhereCl(RewriteParser.WhereClContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRetCl(XQueryParser.RetClContext ctx) { }
+	@Override public void enterRetCl(RewriteParser.RetClContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRetCl(XQueryParser.RetClContext ctx) { }
+	@Override public void exitRetCl(RewriteParser.RetClContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterOrCond(XQueryParser.OrCondContext ctx) { }
+	@Override public void enterOrCond(RewriteParser.OrCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitOrCond(XQueryParser.OrCondContext ctx) { }
+	@Override public void exitOrCond(RewriteParser.OrCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEmpCond(XQueryParser.EmpCondContext ctx) { }
+	@Override public void enterEmpCond(RewriteParser.EmpCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEmpCond(XQueryParser.EmpCondContext ctx) { }
+	@Override public void exitEmpCond(RewriteParser.EmpCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAndCond(XQueryParser.AndCondContext ctx) { }
+	@Override public void enterAndCond(RewriteParser.AndCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAndCond(XQueryParser.AndCondContext ctx) { }
+	@Override public void exitAndCond(RewriteParser.AndCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSomeCond(XQueryParser.SomeCondContext ctx) { }
+	@Override public void enterSomeCond(RewriteParser.SomeCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSomeCond(XQueryParser.SomeCondContext ctx) { }
+	@Override public void exitSomeCond(RewriteParser.SomeCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParenCond(XQueryParser.ParenCondContext ctx) { }
+	@Override public void enterParenCond(RewriteParser.ParenCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParenCond(XQueryParser.ParenCondContext ctx) { }
+	@Override public void exitParenCond(RewriteParser.ParenCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIsCond(XQueryParser.IsCondContext ctx) { }
+	@Override public void enterIsCond(RewriteParser.IsCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIsCond(XQueryParser.IsCondContext ctx) { }
+	@Override public void exitIsCond(RewriteParser.IsCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEqCond(XQueryParser.EqCondContext ctx) { }
+	@Override public void enterEqCond(RewriteParser.EqCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEqCond(XQueryParser.EqCondContext ctx) { }
+	@Override public void exitEqCond(RewriteParser.EqCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNotCond(XQueryParser.NotCondContext ctx) { }
+	@Override public void enterNotCond(RewriteParser.NotCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNotCond(XQueryParser.NotCondContext ctx) { }
+	@Override public void exitNotCond(RewriteParser.NotCondContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVarList(XQueryParser.VarListContext ctx) { }
+	@Override public void enterVarList(RewriteParser.VarListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVarList(XQueryParser.VarListContext ctx) { }
+	@Override public void exitVarList(RewriteParser.VarListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFileName(XQueryParser.FileNameContext ctx) { }
+	@Override public void enterFileName(RewriteParser.FileNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFileName(XQueryParser.FileNameContext ctx) { }
+	@Override public void exitFileName(RewriteParser.FileNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTagName(XQueryParser.TagNameContext ctx) { }
+	@Override public void enterTagName(RewriteParser.TagNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTagName(XQueryParser.TagNameContext ctx) { }
+	@Override public void exitTagName(RewriteParser.TagNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAttName(XQueryParser.AttNameContext ctx) { }
+	@Override public void enterAttName(RewriteParser.AttNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAttName(XQueryParser.AttNameContext ctx) { }
+	@Override public void exitAttName(RewriteParser.AttNameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVar(XQueryParser.VarContext ctx) { }
+	@Override public void enterVar(RewriteParser.VarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVar(XQueryParser.VarContext ctx) { }
+	@Override public void exitVar(RewriteParser.VarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStringConstant(XQueryParser.StringConstantContext ctx) { }
+	@Override public void enterStringConstant(RewriteParser.StringConstantContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStringConstant(XQueryParser.StringConstantContext ctx) { }
+	@Override public void exitStringConstant(RewriteParser.StringConstantContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

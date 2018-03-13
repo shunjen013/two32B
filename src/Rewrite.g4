@@ -1,4 +1,4 @@
-grammar  XQuery;
+grammar Rewrite;
 
 ap
   : 'doc(' fileName ')' '/' rp        #slash

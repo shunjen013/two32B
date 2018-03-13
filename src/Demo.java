@@ -30,16 +30,25 @@ public class Demo {
     public static void main(String[] args) {
         String testInput = readFile(args[1], UTF_8);
         System.out.println("Input: \n" + testInput + "\n");
-        List<Node> result = null;
+        List<Node> result;
+        String rewrite;
         switch(Integer.parseInt(args[0])) {
-            case 0:  result = testXPath(testInput);
-                     break;
-            case 1:  result = testXQuery(testInput);
-                     break;
-            default: System.out.println("Invalid command");
-                     break;
+            case 0:
+                result = testXPath(testInput);
+                printResult(result);
+                break;
+            case 1:
+                result = testXQuery(testInput);
+                printResult(result);
+                break;
+            case 2:
+                rewrite = testRewrite(testInput);
+                System.out.println(rewrite);
+                break;
+            default:
+                System.out.println("Invalid command");
+                break;
         }
-        printResult(result);
     }
 
     public static List<Node> testXPath(String xpath) {
@@ -62,6 +71,17 @@ public class Demo {
         ParseTree tree = parser.xq();
         XQueryHelper v = new XQueryHelper();
         List<Node> results = v.visit( tree );
+        return results;
+    }
+
+    public static String testRewrite(String query) {
+        CharStream input = new ANTLRInputStream(query);
+        RewriteLexer lexer = new RewriteLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        RewriteParser parser = new RewriteParser(tokens);
+        ParseTree tree = parser.xq();
+        RewriteHelper v = new RewriteHelper();
+        String results = v.visit( tree );
         return results;
     }
 
