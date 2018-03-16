@@ -18,9 +18,9 @@ public class RewriteHelper extends RewriteBaseVisitor <String> {
         //System.err.println(varOwner);
         //System.err.println(joinItem);
         //System.err.println(selfCond);
-        if (joinItem.size() == 0) {
-            return ctx.getText();
-        }
+        //if (joinItem.size() == 0) {
+        //   return ctx.getText();
+        //}
 
         ArrayList<StringBuilder> stringBuilders = new ArrayList<>();
         for (int i = 0; i < tableCnt; i ++) {

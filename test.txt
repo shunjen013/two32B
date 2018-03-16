@@ -1,0 +1,11 @@
+for $b in doc("book.xml")/bib/book,
+$a in doc("book.xml")/bib/entry,
+$tb in $b/title/text(),
+$ta in $a/title
+where $tb eq "4"
+return
+<book_with_prices>
+{ $b,
+<price_review>{ $a/price }</price_review>,
+<price>{ $b/price }</price> }
+</book_with_prices>

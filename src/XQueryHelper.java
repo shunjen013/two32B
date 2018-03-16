@@ -335,10 +335,18 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
 //        System.out.println("JoinXQ " + ctx.getText());
         List<Node> result = new ArrayList<>();
         List<Node> left = visit(ctx.xq(0));
-        Map<String, List<Node>> leftHashTable = buildHashTable(left, ctx);
-
-        int varSize = ctx.varList(0).STRING().size();
         List<Node> right = visit(ctx.xq(1));
+
+        if(ctx.varList().isEmpty()){
+            for(Node rightNode : right) {
+                result.addAll(product(left, rightNode));
+            }
+            currNodes = result;
+            return result;
+        }
+
+        Map<String, List<Node>> leftHashTable = buildHashTable(left, ctx);
+        int varSize = ctx.varList(0).STRING().size();
         for(Node rightNode : right) {
             List<Node> children = children(rightNode);
             String key = "";
@@ -360,6 +368,10 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
     public List<Node> product(List<Node> leftNodes, Node rightNode) {
         List<Node> result = new ArrayList<>();
         for(Node leftNode : leftNodes) {
+            if(leftNode.getNodeName()=="#document") {
+                // To filter out node with null content
+                continue;
+            }
             List<Node> newTuple = children(rightNode);
             newTuple.addAll(children(leftNode));
             result.add(makeElem("tuple", newTuple));
@@ -369,6 +381,9 @@ public class XQueryHelper extends XQueryBaseVisitor <List<Node>> {
 
     public Map<String, List<Node>> buildHashTable(List<Node> nodeList, XQueryParser.JoinXQContext ctx){
         Map<String, List<Node>> table = new HashMap<>();
+        if(ctx.varList().isEmpty()) {
+            return table;
+        }
         int varSize = ctx.varList(0).STRING().size();
         for(Node node : nodeList){
             String key = "";
